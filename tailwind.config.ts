@@ -84,11 +84,48 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'sparkleMove': {
+					'0%': {
+						transform: 'translateY(100vh) scale(0)',
+						opacity: '0'
+					},
+					'10%': {
+						opacity: '1'
+					},
+					'90%': {
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'translateY(-100px) scale(1)',
+						opacity: '0'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'fadeInUp': {
+					from: {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'sparkle-move': 'sparkleMove 3s linear infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'fade-in-up': 'fadeInUp 0.8s ease-out forwards'
 			}
 		}
 	},
