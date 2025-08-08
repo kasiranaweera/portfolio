@@ -2,11 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SparkleAnimation from "./SparkleAnimation";
-import { Github, Linkedin, Mail, ExternalLink, Star, GitFork } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Star, GitFork, Brain, Zap, Bot } from "lucide-react";
 
 const ProfileHeader = () => {
   const techStack = [
-    "React", "TypeScript", "Node.js", "Python", "Docker", "AWS"
+    "Python", "PyTorch", "TensorFlow", "Transformers", "LangChain", "OpenAI API",
+    "Hugging Face", "Scikit-learn", "Pandas", "NumPy", "CUDA", "Docker",
+    "FastAPI", "Streamlit", "Jupyter", "Git", "MLOps", "AutoGen"
   ];
 
   return (
@@ -20,12 +22,12 @@ const ProfileHeader = () => {
           <div className="fade-in-up mb-8">
             <div className="relative inline-block">
               <div className="w-32 h-32 mx-auto rounded-full bg-gradient-primary p-1 glow-primary">
-                <div className="w-full h-full rounded-full bg-background flex items-center justify-center text-4xl font-bold gradient-text">
-                  JS
+                <div className="w-full h-full rounded-full bg-background flex items-center justify-center text-3xl font-bold gradient-text">
+                  <Brain className="w-16 h-16" />
                 </div>
               </div>
               <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-secondary rounded-full flex items-center justify-center animate-float">
-                <Star className="w-4 h-4 text-white" />
+                <Bot className="w-4 h-4 text-white" />
               </div>
             </div>
           </div>
@@ -33,42 +35,69 @@ const ProfileHeader = () => {
           {/* Name and Title */}
           <div className="fade-in-up space-y-4 mb-12">
             <h1 className="text-5xl md:text-7xl font-bold gradient-text">
-              John Smith
+              Alex Chen
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground">
-              Full Stack Developer & Open Source Enthusiast
+              AI/ML Engineer & Generative AI Researcher
             </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Passionate about building scalable web applications and contributing to the developer community. 
-              Always learning, always coding, always growing.
-            </p>
+            <div className="space-y-2">
+              <p className="text-lg text-accent font-medium">
+                🎓 Computer Science Undergraduate | 🧠 Passionate about Gen AI & Agentic AI
+              </p>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Building the future with AI agents and generative models. Exploring the intersection of 
+                large language models, multi-agent systems, and autonomous AI. Currently working on 
+                cutting-edge research in agentic AI frameworks and neural architecture optimization.
+              </p>
+            </div>
           </div>
 
           {/* Stats Cards */}
           <div className="fade-in-delayed grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/70 transition-all duration-300 hover:scale-105">
               <div className="flex items-center justify-center space-x-3 mb-2">
-                <Github className="w-6 h-6 text-primary" />
-                <span className="text-2xl font-bold text-foreground">150+</span>
+                <Brain className="w-6 h-6 text-primary" />
+                <span className="text-2xl font-bold text-foreground">50+</span>
               </div>
-              <p className="text-muted-foreground">Repositories</p>
+              <p className="text-muted-foreground">AI Projects</p>
             </Card>
             
             <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/70 transition-all duration-300 hover:scale-105">
               <div className="flex items-center justify-center space-x-3 mb-2">
-                <Star className="w-6 h-6 text-accent" />
-                <span className="text-2xl font-bold text-foreground">2.5k</span>
+                <Zap className="w-6 h-6 text-accent" />
+                <span className="text-2xl font-bold text-foreground">15+</span>
               </div>
-              <p className="text-muted-foreground">Stars Earned</p>
+              <p className="text-muted-foreground">Research Papers</p>
             </Card>
             
             <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/70 transition-all duration-300 hover:scale-105">
               <div className="flex items-center justify-center space-x-3 mb-2">
-                <GitFork className="w-6 h-6 text-secondary-foreground" />
-                <span className="text-2xl font-bold text-foreground">500+</span>
+                <Bot className="w-6 h-6 text-secondary-foreground" />
+                <span className="text-2xl font-bold text-foreground">8+</span>
               </div>
-              <p className="text-muted-foreground">Contributions</p>
+              <p className="text-muted-foreground">AI Agents Built</p>
             </Card>
+          </div>
+
+          {/* Specializations */}
+          <div className="fade-in-delayed mb-8">
+            <h3 className="text-2xl font-semibold mb-6 text-foreground">Research Focus</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <Card className="p-4 bg-card/30 backdrop-blur-sm border-border/50">
+                <div className="flex items-center space-x-3 mb-2">
+                  <Bot className="w-5 h-5 text-primary" />
+                  <h4 className="font-semibold text-foreground">Agentic AI</h4>
+                </div>
+                <p className="text-sm text-muted-foreground">Multi-agent systems, autonomous reasoning, and AI orchestration frameworks</p>
+              </Card>
+              <Card className="p-4 bg-card/30 backdrop-blur-sm border-border/50">
+                <div className="flex items-center space-x-3 mb-2">
+                  <Zap className="w-5 h-5 text-accent" />
+                  <h4 className="font-semibold text-foreground">Generative AI</h4>
+                </div>
+                <p className="text-sm text-muted-foreground">LLMs, diffusion models, and creative AI applications</p>
+              </Card>
+            </div>
           </div>
 
           {/* Tech Stack */}
@@ -95,7 +124,7 @@ const ProfileHeader = () => {
               className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-primary hover:scale-105 px-8 py-3"
             >
               <Github className="w-5 h-5 mr-2" />
-              View GitHub Profile
+              View AI Projects
               <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
             
@@ -104,8 +133,8 @@ const ProfileHeader = () => {
               size="lg"
               className="border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:scale-105 px-8 py-3"
             >
-              <Mail className="w-5 h-5 mr-2" />
-              Get In Touch
+              <Brain className="w-5 h-5 mr-2" />
+              Research Papers
             </Button>
           </div>
 
