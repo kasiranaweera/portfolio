@@ -15,13 +15,13 @@ const SparkleAnimation = () => {
   useEffect(() => {
     const generateSparkles = () => {
       const newSparkles: Sparkle[] = [];
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 20; i++) {
         newSparkles.push({
           id: i,
           left: Math.random() * 100,
-          animationDelay: Math.random() * 3,
-          animationDuration: 3 + Math.random() * 2,
-          size: 2 + Math.random() * 4,
+          animationDelay: Math.random() * 4,
+          animationDuration: 4 + Math.random() * 3, // Longer duration for smoother animation
+          size: 3 + Math.random() * 5, // Larger sparkles
           type: ['primary', 'secondary', 'accent'][Math.floor(Math.random() * 3)] as 'primary' | 'secondary' | 'accent',
         });
       }
@@ -29,7 +29,7 @@ const SparkleAnimation = () => {
     };
 
     generateSparkles();
-    const interval = setInterval(generateSparkles, 5000);
+    const interval = setInterval(generateSparkles, 6000); // Less frequent regeneration
 
     return () => clearInterval(interval);
   }, []);

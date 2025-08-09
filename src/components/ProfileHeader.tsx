@@ -34,21 +34,26 @@ const ProfileHeader = () => {
 
           {/* Name and Title */}
           <div className="fade-in-up space-y-4 mb-12">
-            <h1 className="text-5xl md:text-7xl font-bold gradient-text">
+            <h1 className="text-5xl md:text-7xl font-bold gradient-text animate-scale-in">
               Alex Chen
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground">
+            <p className="text-xl md:text-2xl text-muted-foreground animate-slide-up" style={{ animationDelay: '0.2s' }}>
               AI/ML Engineer & Generative AI Researcher
             </p>
-            <div className="space-y-2">
-              <p className="text-lg text-accent font-medium">
-                🎓 Computer Science Undergraduate | 🧠 Passionate about Gen AI & Agentic AI
+            <div className="space-y-3 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <p className="text-lg text-accent font-medium bg-accent/10 px-4 py-2 rounded-full inline-block">
+                🎓 Computer Science • 🧠 Gen AI & Agentic AI Specialist • 🚀 Innovation Leader
               </p>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Building the future with AI agents and generative models. Exploring the intersection of 
-                large language models, multi-agent systems, and autonomous AI. Currently working on 
-                cutting-edge research in agentic AI frameworks and neural architecture optimization.
+                Pioneering the future of artificial intelligence through cutting-edge research in generative models, 
+                multi-agent systems, and autonomous reasoning. Currently developing next-generation AI frameworks 
+                that push the boundaries of what's possible in machine intelligence and human-AI collaboration.
               </p>
+              <div className="flex flex-wrap justify-center gap-4 pt-2">
+                <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium">🔬 Research</span>
+                <span className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm font-medium">🤖 AI Agents</span>
+                <span className="px-3 py-1 bg-secondary/20 text-secondary-foreground rounded-full text-sm font-medium">⚡ Innovation</span>
+              </div>
             </div>
           </div>
 
@@ -121,20 +126,29 @@ const ProfileHeader = () => {
           <div className="fade-in-delayed flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-primary hover:scale-105 px-8 py-3"
+              className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-primary hover:scale-105 px-8 py-3 animate-pulse-glow"
             >
               <Github className="w-5 h-5 mr-2" />
-              View AI Projects
+              Explore AI Projects
               <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
             
             <Button 
               variant="outline" 
               size="lg"
-              className="border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:scale-105 px-8 py-3"
+              className="border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:scale-105 px-8 py-3 hover:shadow-primary"
             >
               <Brain className="w-5 h-5 mr-2" />
-              Research Papers
+              Research Publications
+            </Button>
+            
+            <Button 
+              variant="secondary" 
+              size="lg"
+              className="bg-gradient-secondary hover:opacity-90 transition-all duration-300 hover:scale-105 px-8 py-3"
+            >
+              <Bot className="w-5 h-5 mr-2" />
+              AI Demos
             </Button>
           </div>
 
@@ -165,10 +179,15 @@ const ProfileHeader = () => {
         </div>
       </div>
 
-      {/* Background decorative elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-primary rounded-full opacity-20 animate-float"></div>
+      {/* Enhanced Background decorative elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-primary rounded-full opacity-20 animate-float glow-primary"></div>
       <div className="absolute bottom-20 right-10 w-16 h-16 bg-gradient-secondary rounded-full opacity-30 animate-float" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 left-20 w-12 h-12 bg-accent/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/2 left-20 w-12 h-12 bg-gradient-accent rounded-full opacity-25 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/3 right-32 w-8 h-8 bg-primary/20 rounded-full animate-bounce-subtle" style={{ animationDelay: '0.5s' }}></div>
+      <div className="absolute bottom-1/3 left-1/4 w-6 h-6 bg-accent/30 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+      
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none"></div>
     </div>
   );
 };
