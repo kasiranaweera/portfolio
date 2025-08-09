@@ -35,7 +35,7 @@ const ProfileHeader = () => {
           {/* Name and Title */}
           <div className="fade-in-up space-y-4 mb-12">
             <h1 className="text-5xl md:text-7xl font-bold gradient-text animate-scale-in">
-              Alex Chen
+              Kasi Ranaweera
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground animate-slide-up" style={{ animationDelay: '0.2s' }}>
               AI/ML Engineer & Generative AI Researcher
