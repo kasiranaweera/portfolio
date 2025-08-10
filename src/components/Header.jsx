@@ -7,12 +7,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Moon, Sun, Monitor, Menu, X } from "lucide-react";
+import { Moon, Sun, Monitor, Menu, X, Brain } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 const Header = () => {
-  const { setTheme, theme } = useTheme();
+  const { setTheme } = useTheme();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -24,18 +24,18 @@ const Header = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  const isActive = (href: string) => location.pathname === href;
+  const isActive = (href) => location.pathname === href;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-3">
             <div className="h-8 w-8 rounded-full bg-gradient-primary flex items-center justify-center">
-              <span className="text-sm font-bold text-white">AC</span>
+              <Brain className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold text-xl gradient-text">Alex Chen</span>
+            <span className="font-bold text-xl gradient-text">Kasi Ranaweera</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,13 +45,16 @@ const Header = () => {
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
+                  "text-sm font-medium transition-colors hover:text-primary relative",
                   isActive(item.href) 
-                    ? "text-primary border-b-2 border-primary" 
+                    ? "text-primary" 
                     : "text-muted-foreground"
                 )}
               >
                 {item.name}
+                {isActive(item.href) && (
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-primary rounded-full" />
+                )}
               </Link>
             ))}
           </nav>
@@ -101,7 +104,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden animate-fade-in">
             <nav className="flex flex-col space-y-3 pb-4 pt-2">
               {navigation.map((item) => (
                 <Link
