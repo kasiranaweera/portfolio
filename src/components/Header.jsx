@@ -10,6 +10,7 @@ import {
 import { Moon, Sun, Monitor, Menu, X, Brain } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+import Logo from "../../assets/logo_w.png"; 
 
 const Header = () => {
   const { setTheme } = useTheme();
@@ -32,10 +33,12 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="h-8 w-8 rounded-full bg-gradient-primary flex items-center justify-center">
+            {/* <div className="h-8 w-8 rounded-full bg-gradient-primary flex items-center justify-center font-bold text-2xl">
               <Brain className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-bold text-xl gradient-text">Kasi Ranaweera</span>
+              S
+            </div> */}
+            <img src={Logo} alt="Logo" className="h-8 w-8 rounded-sm" />
+            <span className="font-bold text-xl gradient-text">KASI Ranaweera</span>
           </Link>
 
           {/* Desktop Navigation */}
