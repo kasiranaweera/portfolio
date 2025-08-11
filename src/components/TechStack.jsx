@@ -13,7 +13,7 @@ const technologies = [
 ]
 
 const aiTechnologies = [
-  { name: "TensorFlow", icon: "assets/icons/tensorflow.svg", color: "border-orange-400 hover:border-orange-500" },
+  { name: "TensorFlow", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/tensorflow.svg", color: "border-orange-400 hover:border-orange-500" },
   { name: "PyTorch", icon: "assets/icons/pytorch-icon.svg", color: "border-red-500 hover:border-red-600" },
   { name: "DeepSeek", icon: "assets/icons/deepseek.svg", color: "border-green-600 hover:border-green-700" },
   { name: "Hugging Face", icon: "assets/icons/hugging-face-icon.svg", color: "border-yellow-400 hover:border-yellow-500" },
@@ -56,7 +56,7 @@ export default function TechStack() {
             <div className="relative mb-8">
               <h4 className="text-xl font-bold text-foreground mb-6">Core Tools</h4>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-md mx-auto">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-md mx-auto">
               {technologies.map((tech) => (
                 <div
                   key={tech.name}
