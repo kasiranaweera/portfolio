@@ -2,29 +2,29 @@ import { useState } from "react"
 import Image_Techtool from "../../assets/image.png";
 
 const technologies = [
-  { name: "React", icon: "assets/icons/react_dark.svg", color: "border-blue-400 hover:border-blue-500" },
-  { name: "Next.js", icon: "assets/icons/nextjs_icon_dark.svg", color: "border-gray-800 hover:border-gray-900" },
-  { name: "JavaScript", icon: "assets/icons/javascript.svg", color: "border-blue-600 hover:border-blue-700" },
-  { name: "Node.js", icon: "assets/icons/nodejs.svg", color: "border-green-500 hover:border-green-600" },
-  { name: "Python", icon: "assets/icons/python.svg", color: "border-yellow-500 hover:border-yellow-600" },
-  { name: "Docker", icon: "assets/icons/docker.svg", color: "border-blue-500 hover:border-blue-600" },
-  { name: "PHP", icon: "assets/icons/php.svg", color: "border-orange-500 hover:border-orange-600" },
-  { name: "Laravel", icon: "assets/icons/laravel.svg", color: "border-blue-700 hover:border-blue-800" },
+  { name: "React", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/react_dark.svg", color: "border-blue-400 hover:border-blue-500" },
+  { name: "Next.js", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/nextjs_icon_dark.svg", color: "border-gray-800 hover:border-gray-900" },
+  { name: "JavaScript", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/javascript.svg", color: "border-blue-600 hover:border-blue-700" },
+  { name: "Node.js", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/nodejs.svg", color: "border-green-500 hover:border-green-600" },
+  { name: "Python", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/python.svg", color: "border-yellow-500 hover:border-yellow-600" },
+  { name: "Docker", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/docker.svg", color: "border-blue-500 hover:border-blue-600" },
+  { name: "PHP", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/php.svg", color: "border-orange-500 hover:border-orange-600" },
+  { name: "Laravel", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/laravel.svg", color: "border-blue-700 hover:border-blue-800" },
 ]
 
 const aiTechnologies = [
   { name: "TensorFlow", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/tensorflow.svg", color: "border-orange-400 hover:border-orange-500" },
-  { name: "PyTorch", icon: "assets/icons/pytorch-icon.svg", color: "border-red-500 hover:border-red-600" },
-  { name: "DeepSeek", icon: "assets/icons/deepseek.svg", color: "border-green-600 hover:border-green-700" },
-  { name: "Hugging Face", icon: "assets/icons/hugging-face-icon.svg", color: "border-yellow-400 hover:border-yellow-500" },
-  { name: "Scikit-learn", icon: "assets/icons/scikit-learn.svg", color: "border-blue-500 hover:border-blue-600" },
-  { name: "Pandas", icon: "assets/icons/Pandas.svg", color: "border-purple-500 hover:border-purple-600" },
-  { name: "NumPy", icon: "assets/icons/NumPy.svg", color: "border-indigo-500 hover:border-indigo-600" },
-  { name: "Jupyter", icon: "assets/icons/Jupyter.svg", color: "border-orange-600 hover:border-orange-700" },
-  { name: "Chroma", icon: "assets/icons/chroma.svg", color: "border-teal-500 hover:border-teal-600" },
-  { name: "Keras", icon: "assets/icons/Keras.svg", color: "border-red-400 hover:border-red-500" },
-  { name: "FastAPI", icon: "assets/icons/fastapi.svg", color: "border-green-500 hover:border-green-600" },
-  { name: "Streamlit", icon: "assets/icons/Streamlit.svg", color: "border-pink-500 hover:border-pink-600" },
+  { name: "PyTorch", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/pytorch-icon.svg" },
+  { name: "DeepSeek", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/cef9121eb17ce31d0fe30c017c4c1b55cea80af5/icons/deepseek.svg", color: "border-green-600 hover:border-green-700" },
+  { name: "Hugging Face", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/hugging-face-icon.svg", color: "border-yellow-400 hover:border-yellow-500" },
+  { name: "Scikit-learn", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/6d40ce531dc3cc7c219ae836f598a8e9dc39b6fa/icons/scikit-learn.svg", color: "border-blue-500 hover:border-blue-600" },
+  { name: "Pandas", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/6d40ce531dc3cc7c219ae836f598a8e9dc39b6fa/icons/Pandas.svg", color: "border-purple-500 hover:border-purple-600" },
+  { name: "NumPy", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/6d40ce531dc3cc7c219ae836f598a8e9dc39b6fa/icons/NumPy.svg", color: "border-indigo-500 hover:border-indigo-600" },
+  { name: "Jupyter", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/6d40ce531dc3cc7c219ae836f598a8e9dc39b6fa/icons/Jupyter.svg", color: "border-orange-600 hover:border-orange-700" },
+  { name: "Chroma", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/chroma.svg", color: "border-teal-500 hover:border-teal-600" },
+  { name: "Keras", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/6d40ce531dc3cc7c219ae836f598a8e9dc39b6fa/icons/Keras.svg", color: "border-red-400 hover:border-red-500" },
+  { name: "FastAPI", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/FastAPI.svg", color: "border-green-500 hover:border-green-600" },
+  { name: "Streamlit", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/6d40ce531dc3cc7c219ae836f598a8e9dc39b6fa/icons/Streamlit.svg", color: "border-pink-500 hover:border-pink-600" },
 ]
 
 export default function TechStack() {
@@ -89,7 +89,7 @@ export default function TechStack() {
                   <div
                     className={`w-12 h-12 rounded-lg bg-white border-2 ${tech.color} flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-sm hover:shadow-md ${hoveredTech === tech.name ? "scale-110 shadow-md" : ""}`}
                   >
-                    <img src={tech.icon} alt={`${tech.name} logo`} className="w-5 h-5 object-contain" />
+                    <img src={tech.icon} alt={`${tech.name} logo`} className="w-7 h-7 object-contain" />
                   </div>
                   <p className="text-xs font-medium text-foreground mt-2 text-center">{tech.name}</p>
                 </div>
