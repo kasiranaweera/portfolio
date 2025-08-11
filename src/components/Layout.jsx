@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import { ThemeProvider } from "next-themes";
+import Footer from "./Footer";
 
 const Layout = () => {
   return (
@@ -15,6 +16,7 @@ const Layout = () => {
         <main>
           <Outlet />
         </main>
+        <Footer />
       </div>
     </ThemeProvider>
   );

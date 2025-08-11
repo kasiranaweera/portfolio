@@ -78,7 +78,7 @@ export default function TechStack() {
           {/* AI & ML Tools */}
           <div className="text-center">
             <h4 className="text-xl font-bold text-foreground mb-6">AI & ML Technologies</h4>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 max-w-2xl mx-auto">
+            <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 gap-4 max-w-2xl mx-auto">
               {aiTechnologies.map((tech, index) => (
                 <div
                   key={index}

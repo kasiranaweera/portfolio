@@ -135,7 +135,7 @@ const Home = () => {
               style={{ animationDelay: "0.4s" }}
             >
               <h1 className="text-5xl md:text-7xl font-bold gradient-text animate-scale-in">
-                AI is the engine that powers the future{" "}
+                AI is the Engine that Powers the Future{" "}
               </h1>
               <div class="h-4"></div>
               <p className="text-lg text-accent font-medium bg-accent/10 px-4 py-2 rounded-full inline-block">
@@ -229,28 +229,27 @@ const Home = () => {
           {/* Tech Stack */}
           <TechStack />
 
-          {/* Social Links */}
-          <div className="fade-in-delayed flex justify-center space-x-6">
-            <a
-              href="#"
-              className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-all duration-300 hover:scale-110 glow-secondary"
-              aria-label="GitHub"
-            >
-              <Github className="w-6 h-6" />
-            </a>
-            <a
-              href="#"
-              className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-all duration-300 hover:scale-110 glow-secondary"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="#"
-              className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-all duration-300 hover:scale-110 glow-secondary"
-              aria-label="Email"
-            >
-              <Mail className="w-6 h-6" />
+          {/* Call Section */}
+          <div className="fade-in-delayed mb-12 mt-24">
+            <h3 className="text-2xl font-semibold mb-6 text-foreground mt-20">
+              Ready to Build the Future Together?
+            </h3>
+            <div className="text-md leading-relaxed text-muted-foreground px-10 mb-8">
+              Join me in creating intelligent, impactful solutions through AI,
+              machine learning, and cutting-edge software engineering. Whether
+              you’re looking to collaborate, share ideas, or start a project —
+              let’s make it happen.
+            </div>
+            <a href="/contact">
+              {" "}
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-primary/50 hover:bg-primary/10 hover:text-white transition-all duration-300 hover:scale-105 px-8 py-3 hover:shadow-primary"
+              >
+                <Star className="w-5 h-5 mr-2" />
+                Let's Collaborate
+              </Button>
             </a>
           </div>
         </div>
