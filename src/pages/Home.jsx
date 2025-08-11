@@ -59,33 +59,38 @@ const Home = () => {
 
           {/* Name and Title */}
           <div className="fade-in-up space-y-4 mb-12">
+            {/* <p
+              className="text-xl md:text-2xl text-muted-foreground animate-slide-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              AI/ML Engineer & Developer
+            </p>
             <h1 className="text-5xl md:text-7xl font-bold gradient-text animate-scale-in">
               KASI Ranaweera
             </h1>
             <h4 className="text-2xl md:text-4xl font-bold gradient-text animate-scale-in">
               _sithija_
             </h4>
-            <div class="h-4"></div>
-            <p
-              className="text-xl md:text-2xl text-muted-foreground animate-slide-up"
-              style={{ animationDelay: "0.2s" }}
-            >
-              AI/ML Engineer & Developer
-            </p>
+            <div class="h-4"></div> */}
             <div
               className="space-y-3 animate-slide-up"
               style={{ animationDelay: "0.4s" }}
             >
+              <h1 className="text-5xl md:text-7xl font-bold gradient-text animate-scale-in">
+                AI is the engine that powers the future{" "}
+              </h1>
+              <div class="h-4"></div>
               <p className="text-lg text-accent font-medium bg-accent/10 px-4 py-2 rounded-full inline-block">
                 🎓 Software Engineering • 🧠 Gen AI & Agentic AI Specialist • 🚀
                 Innovation Leader
               </p>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Pioneering the future of artificial intelligence through
-                cutting-edge research in generative models, multi-agent systems,
-                and autonomous reasoning. Currently developing next-generation
-                AI frameworks that push the boundaries of what's possible in
-                machine intelligence and human-AI collaboration.
+                I'm KASI Ranaweera, Pioneering the future of artificial
+                intelligence through cutting-edge research in generative models,
+                multi-agent systems, and autonomous reasoning. Currently
+                developing next-generation AI frameworks that push the
+                boundaries of what's possible in machine intelligence and
+                human-AI collaboration.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2">
                 <span className="px-3 py-1 bg-secondary/20 text-secondary-foreground rounded-full text-sm font-medium">
@@ -104,14 +109,15 @@ const Home = () => {
           {/* Action Buttons */}
           <div className="fade-in-delayed flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <a href="https://github.com/kasiranaweera">
-            <Button
-              size="lg"
-              className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-primary hover:scale-105 px-8 py-3 animate-pulse-glow"
-            >
-              <Github className="w-5 h-5 mr-2" />
-              Explore AI Projects
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </Button></a>
+              <Button
+                size="lg"
+                className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-primary hover:scale-105 px-8 py-3 animate-pulse-glow"
+              >
+                <Github className="w-5 h-5 mr-2" />
+                Explore AI Projects
+                <ExternalLink className="w-4 h-4 ml-2" />
+              </Button>
+            </a>
             <a href="/contact">
               {" "}
               <Button
@@ -152,10 +158,17 @@ const Home = () => {
             </Card>
           </div>
 
+          {/* Scroll Indicator */}
+          <div className="flex bottom-6 sm:bottom-8  transform -translate-x-1/2 animate-bounce justify-center">
+            <div className="w-5 sm:w-6 h-8 sm:h-10 border-2 border-black/30 dark:border-white/30 rounded-full flex justify-center">
+              <div className="w-1 h-2 sm:h-3 bg-black/50 dark:bg-white/50 rounded-full mt-2 animate-pulse"></div>
+            </div>
+          </div>
+
           {/* Specializations */}
-          <div className="fade-in-delayed mb-8">
+          <div className="fade-in-delayed mb-8 mt-16">
             <h3 className="text-2xl font-semibold mb-6 text-foreground">
-              Research Focus
+              Research Focus & Expertise
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               <Card className="p-4 bg-card/30 backdrop-blur-sm border-border/50">
