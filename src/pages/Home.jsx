@@ -13,6 +13,8 @@ import {
   Zap,
   Bot,
 } from "lucide-react";
+import Specializations from "../components/Specializations";
+import TechStack from "../components/TechStack";
 
 const Home = () => {
   const techStack = [
@@ -34,6 +36,62 @@ const Home = () => {
     "Git",
     "MLOps",
     "AutoGen",
+  ];
+
+  const technologies = [
+    { name: "React", icon: "/placeholder-gpkqp.png", color: "border-blue-400" },
+    {
+      name: "Node.js",
+      icon: "/nodejs-green-logo.png",
+      color: "border-green-500",
+    },
+    {
+      name: "MongoDB",
+      icon: "/placeholder-pl82f.png",
+      color: "border-green-600",
+    },
+    {
+      name: "Express.js",
+      icon: "/placeholder-2a92r.png",
+      color: "border-gray-600",
+    },
+    {
+      name: "Python",
+      icon: "/python-logo-yellow-blue.png",
+      color: "border-yellow-500",
+    },
+    { name: "Java", icon: "/java-logo-red.png", color: "border-red-500" },
+    { name: "Docker", icon: "/docker-logo-blue.png", color: "border-blue-500" },
+    { name: "AWS", icon: "/placeholder-rd9xh.png", color: "border-orange-500" },
+  ];
+
+  const aiTechnologies = [
+    {
+      name: "TensorFlow",
+      icon: "/tensorflow-logo-orange.png",
+      color: "border-orange-400",
+    },
+    { name: "PyTorch", icon: "/pytorch-logo-red.png", color: "border-red-400" },
+    {
+      name: "Scikit-learn",
+      icon: "/scikit-learn-logo-blue-orange.png",
+      color: "border-blue-400",
+    },
+    {
+      name: "Google Cloud",
+      icon: "/placeholder.svg?height=32&width=32",
+      color: "border-blue-500",
+    },
+    {
+      name: "Git",
+      icon: "/placeholder.svg?height=32&width=32",
+      color: "border-orange-600",
+    },
+    {
+      name: "REST API",
+      icon: "/placeholder.svg?height=32&width=32",
+      color: "border-indigo-500",
+    },
   ];
 
   return (
@@ -84,7 +142,7 @@ const Home = () => {
                 🎓 Software Engineering • 🧠 Gen AI & Agentic AI Specialist • 🚀
                 Innovation Leader
               </p>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed">
                 I'm KASI Ranaweera, Pioneering the future of artificial
                 intelligence through cutting-edge research in generative models,
                 multi-agent systems, and autonomous reasoning. Currently
@@ -166,53 +224,10 @@ const Home = () => {
           </div>
 
           {/* Specializations */}
-          <div className="fade-in-delayed mb-8 mt-16">
-            <h3 className="text-2xl font-semibold mb-6 text-foreground">
-              Research Focus & Expertise
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <Card className="p-4 bg-card/30 backdrop-blur-sm border-border/50">
-                <div className="flex items-center space-x-3 mb-2">
-                  <Bot className="w-5 h-5 text-primary" />
-                  <h4 className="font-semibold text-foreground">Agentic AI</h4>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Multi-agent systems, autonomous reasoning, and AI
-                  orchestration frameworks
-                </p>
-              </Card>
-              <Card className="p-4 bg-card/30 backdrop-blur-sm border-border/50">
-                <div className="flex items-center space-x-3 mb-2">
-                  <Zap className="w-5 h-5 text-accent" />
-                  <h4 className="font-semibold text-foreground">
-                    Generative AI
-                  </h4>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  LLMs, diffusion models, and creative AI applications
-                </p>
-              </Card>
-            </div>
-          </div>
+          <Specializations />
 
           {/* Tech Stack */}
-          <div className="fade-in-delayed mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-foreground">
-              Tech Stack
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {techStack.map((tech, index) => (
-                <Badge
-                  key={tech}
-                  variant="secondary"
-                  className="px-4 py-2 text-sm font-medium bg-secondary/80 hover:bg-secondary transition-all duration-300 hover:scale-110"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </div>
+          <TechStack />
 
           {/* Social Links */}
           <div className="fade-in-delayed flex justify-center space-x-6">
