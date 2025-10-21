@@ -215,7 +215,7 @@ const Work = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6 pb-3">
               Work Experience
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -537,13 +537,14 @@ const Work = () => {
                 collaborations, or innovative AI projects. Let's build the
                 future of AI together!
               </p>
+              <a href="/contact">
               <Button
                 size="lg"
                 className="bg-gradient-primary hover:opacity-90 transition-all duration-300 hover:scale-105"
               >
                 Get In Touch
                 <ExternalLink className="w-4 h-4 ml-2" />
-              </Button>
+              </Button></a>
             </Card>
           </div>
         </div>

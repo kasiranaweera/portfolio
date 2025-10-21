@@ -23,21 +23,21 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-4">Connect</h3>
             <div className="fade-in-delayed flex space-x-6 my-4 pt-4">
               <a
-                href="#"
+                href="https://github.com/kasiranaweera"
                 className="p-3 rounded-full bg-gray-200 dark:bg-secondary/50 hover:bg-gray-300 dark:hover:bg-secondary transition-all duration-300 hover:scale-110"
                 aria-label="GitHub"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/kasi-ranaweera"
                 className="p-3 rounded-full bg-gray-200 dark:bg-secondary/50 hover:bg-gray-300 dark:hover:bg-secondary transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="/contact"
                 className="p-3 rounded-full bg-gray-200 dark:bg-secondary/50 hover:bg-gray-300 dark:hover:bg-secondary transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
