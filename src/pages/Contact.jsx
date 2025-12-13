@@ -17,8 +17,68 @@ import {
   Facebook,
   Globe,
 } from "lucide-react";
+import { useState, useRef } from "react";
 
 const Contact = () => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const formData = new FormData(form.current);
+      const name = formData.get("from_name");
+      const email = formData.get("from_email");
+      const subject = formData.get("subject");
+      const category = formData.get("category");
+      const message = formData.get("message");
+
+      // Create email body with all form details
+      const emailBody = `
+Hello Kasi,
+
+I am reaching out regarding: ${subject}
+
+Collaboration Type: ${category}
+
+${message}
+
+---
+Sent from: ${name} (${email})
+      `.trim();
+
+      // Create mailto link
+      const mailtoLink = `mailto:ranaweerakasi@gmail.com?subject=${encodeURIComponent(
+        `[Portfolio] ${subject}`
+      )}&body=${encodeURIComponent(emailBody)}`;
+
+      // Open Gmail (or default email client)
+      window.location.href = mailtoLink;
+
+      setSubmitStatus({
+        type: "success",
+        message: "✅ Opening your email client... Complete and send the message!",
+      });
+
+      // Reset form after a short delay
+      setTimeout(() => {
+        form.current.reset();
+        setSubmitStatus(null);
+      }, 2000);
+    } catch (error) {
+      console.error("Error:", error);
+      setSubmitStatus({
+        type: "error",
+        message: "❌ Could not open email client. Please email directly: ranaweerakasi@gmail.com",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const contactMethods = [
     {
       icon: Mail,
@@ -98,7 +158,6 @@ const Contact = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Contact Form */}
             <div className="lg:col-span-2">
               <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50 animate-fade-in">
                 <h2 className="text-2xl font-semibold text-foreground mb-6 flex items-center">
@@ -106,23 +165,39 @@ const Contact = () => {
                   Send a Message
                 </h2>
 
-                <form className="space-y-6">
+                {submitStatus && (
+                  <div
+                    className={`mb-6 p-4 rounded-lg ${
+                      submitStatus.type === "success"
+                        ? "bg-green-500/10 text-green-600 border border-green-500/20"
+                        : "bg-red-500/10 text-red-600 border border-red-500/20"
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
+
+                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="name">Name</Label>
                       <Input
                         id="name"
+                        name="from_name"
                         placeholder="Your full name"
                         className="mt-1"
+                        required
                       />
                     </div>
                     <div>
                       <Label htmlFor="email">Email</Label>
                       <Input
                         id="email"
+                        name="from_email"
                         type="email"
                         placeholder="your.email@example.com"
                         className="mt-1"
+                        required
                       />
                     </div>
                   </div>
@@ -131,8 +206,10 @@ const Contact = () => {
                     <Label htmlFor="subject">Subject</Label>
                     <Input
                       id="subject"
+                      name="subject"
                       placeholder="What would you like to discuss?"
                       className="mt-1"
+                      required
                     />
                   </div>
 
@@ -140,7 +217,9 @@ const Contact = () => {
                     <Label htmlFor="category">Collaboration Type</Label>
                     <select
                       id="category"
+                      name="category"
                       className="w-full mt-1 px-3 py-2 bg-background border border-input rounded-md text-foreground"
+                      required
                     >
                       <option value="">Select a category</option>
                       <option value="research">Research Collaboration</option>
@@ -156,19 +235,22 @@ const Contact = () => {
                     <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Tell me more about your project, research, or collaboration idea..."
                       rows={18}
                       className="mt-1"
+                      required
                     />
                   </div>
 
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-gradient-primary hover:opacity-90 transition-all duration-300 hover:scale-105"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-primary hover:opacity-90 transition-all duration-300 hover:scale-105 disabled:opacity-50"
                   >
                     <Send className="w-4 h-4 mr-2" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </Card>
