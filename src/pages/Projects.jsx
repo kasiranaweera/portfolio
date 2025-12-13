@@ -40,7 +40,7 @@ const Projects = () => {
         "Python",
       ],
       github: "https://github.com/kasi/agentflow",
-      live: "",
+      live: "https://eduwingz.vercel.app",
       status: "Active Development",
       teamSize: "Ms. Ashika Muthukuda, Ms. Nishadi Disanayake",
       images: [imgp11, imgp12, imgp13],
@@ -60,9 +60,9 @@ const Projects = () => {
         "Vercel",
       ],
       github: "https://github.com/kasi/agentflow",
-      live: "",
+      live: "https://ol-poddo.vercel.app",
       status: "Active Development",
-      teamSize: "SOlo Project",
+      teamSize: "Solo Project",
       images: [imgp21, imgp22],
     },
     {
@@ -151,6 +151,20 @@ const Projects = () => {
       github:
         "https://github.com/kasiranaweera/Smart-Fan-Control-Using-Image-Processing",
     },
+
+    {
+      title: "AR Space Education Application",
+      description:
+      "An immersive Augmented Reality (AR) educational application focused on solar system exploration and space phenomena. Built with Unity and Vuforia SDK to create interactive learning experiences.",
+      technologies: [
+        "Unity",
+        "Vuforia Engine",
+        "C#	",
+      ],
+      github:
+        "https://github.com/kasiranaweera/ar-space-education",
+    },
+    
   ];
 
   return (
