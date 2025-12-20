@@ -142,7 +142,7 @@ const Home = () => {
                 🎓 Software Engineering (UG) &nbsp;&nbsp; 🧠 Aspiring AI Engineer &nbsp;&nbsp; 🚀 Passionate about Gen & Agentic AI
               </p>
               <p className="text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed">
-                I'm KASI Ranaweera, Pioneering the future of artificial
+                I'm Sithija Ishan Ranaweera (KASI), Pioneering the future of artificial
                 intelligence through cutting-edge research in generative models,
                 multi-agent systems, and autonomous reasoning. Currently
                 developing next-generation AI frameworks that push the
