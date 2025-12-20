@@ -2,10 +2,10 @@ import { useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Lock } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import cvPage0 from "../../assets/cv-page-0.png";
-import cvPage1 from "../../assets/cv-page-1.png";
 
 const CV = () => {
+  const cvPage0 = "https://raw.githubusercontent.com/kasiranaweera/portfolio/main/assets/cv-page-0.png";
+  const cvPage1 = "https://raw.githubusercontent.com/kasiranaweera/portfolio/main/assets/cv-page-1.png";
   const cvContainerRef = useRef(null);
 
   useEffect(() => {
