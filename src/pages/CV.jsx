@@ -4,8 +4,6 @@ import { Lock } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const CV = () => {
-  const cvPage0 = "https://raw.githubusercontent.com/kasiranaweera/portfolio/main/assets/cv-page-0.png";
-  const cvPage1 = "https://raw.githubusercontent.com/kasiranaweera/portfolio/main/assets/cv-page-1.png";
   const cvContainerRef = useRef(null);
 
   useEffect(() => {
@@ -135,14 +133,14 @@ const CV = () => {
           >
             <div className="flex flex-col gap-4">
               <img
-                src={cvPage0}
+                src="/cv-page-0.png"
                 alt="CV Page 1"
                 className="w-full rounded-lg shadow-md border border-border/50"
                 draggable={false}
                 onContextMenu={(e) => e.preventDefault()}
               />
               <img
-                src={cvPage1}
+                src="/cv-page-1.png"
                 alt="CV Page 2"
                 className="w-full rounded-lg shadow-md border border-border/50"
                 draggable={false}
