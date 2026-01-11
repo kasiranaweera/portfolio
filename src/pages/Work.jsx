@@ -65,11 +65,11 @@ const Work = () => {
   const volunteering = [
     {
       company: "SEDS SLTC",
-      period: "Sep 2022 - present",
+      period: "Sep 2022 - Nov 2025",
       position: [
         {
           title: "Vice Chairman",
-          time: "Jul 2024 - Present",
+          time: "Jul 2024 - Nov 2025",
           description: [
             "Supported event coordination and logistics for the Colombo edition of NASA’s global hackathon.",
             "Assisted in managing venue setup, prize-giving event organization, and participant support.",
@@ -122,7 +122,7 @@ const Work = () => {
         },
         {
           title: "Member",
-          time: "Sep 2022 - Jul 2024",
+          time: "Sep 2022 - Jul 2023",
           description: [
             "Actively supported various society projects and events.",
             "Assisted in organizing Technomind Robotic Competition, helping with logistics, coordination, and execution.",

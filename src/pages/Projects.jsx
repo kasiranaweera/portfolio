@@ -1,13 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Github,
-  ExternalLink,
-  Star,
-  Code2,
-  X,
-} from "lucide-react";
+import { Github, ExternalLink, Star, Code2, X } from "lucide-react";
 
 import imgp11 from "../../assets/img-p11.png";
 import imgp12 from "../../assets/img-p12.png";
@@ -16,6 +10,8 @@ import imgp21 from "../../assets/img-p21.png";
 import imgp22 from "../../assets/img-p22.png";
 import imgp31 from "../../assets/img-p31.jpeg";
 import imgp32 from "../../assets/img-p32.jpeg";
+import imgp41 from "../../assets/img-p41.png";
+import imgp42 from "../../assets/img-p42.png";
 import { useState } from "react";
 
 const Projects = () => {
@@ -44,6 +40,28 @@ const Projects = () => {
       status: "Active Development",
       teamSize: "Ms. Ashika Muthukuda, Ms. Nishadi Disanayake",
       images: [imgp11, imgp12, imgp13],
+    },
+    {
+      title: "HaiiBot",
+      description:
+        "Haii is an AI-powered chatbot platform designed for modern shops to automate customer conversations and support. It helps answer customer questions, provide product and policy information, track orders, and assist buyers directly on websites and messaging platforms like WhatsApp, Telegram, and Messenger. Haii uses intelligent AI with shop-specific knowledge to deliver accurate, human-like responses.",
+      longDescription:
+        "Built to be simple and flexible, Haii offers easy website integration, full theme customization to match each brand, and a built-in ticketing system for handling special cases and complaints. With secure API-based connections and multi-channel support, Haii helps businesses improve customer experience while saving time and effort.",
+      category: "SaaS Application",
+      technologies: [
+        "React JS - Vite",
+        "FastAPI",
+        "Tailwind CSS",
+        "LangChain",
+        "Gemini AI",
+        "SQLite",
+        "Python",
+      ],
+      github: "",
+      live: "",
+      status: "Active Development",
+      teamSize: "Solo Project",
+      images: [imgp41, imgp42],
     },
     {
       title: "Knowingz Platform",
@@ -155,16 +173,10 @@ const Projects = () => {
     {
       title: "AR Space Education Application",
       description:
-      "An immersive Augmented Reality (AR) educational application focused on solar system exploration and space phenomena. Built with Unity and Vuforia SDK to create interactive learning experiences.",
-      technologies: [
-        "Unity",
-        "Vuforia Engine",
-        "C#	",
-      ],
-      github:
-        "https://github.com/kasiranaweera/ar-space-education",
+        "An immersive Augmented Reality (AR) educational application focused on solar system exploration and space phenomena. Built with Unity and Vuforia SDK to create interactive learning experiences.",
+      technologies: ["Unity", "Vuforia Engine", "C#	"],
+      github: "https://github.com/kasiranaweera/ar-space-education",
     },
-    
   ];
 
   return (

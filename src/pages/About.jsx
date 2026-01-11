@@ -7,8 +7,11 @@ import {
   Target,
   Code,
   BookOpen,
+  FileText,
+  ExternalLink,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
   const skills = [
@@ -48,7 +51,14 @@ const About = () => {
       company: "SLIIT",
       date: "Aug 2023",
       dec1: "7hgu7jancd",
-      link: "https://drive.google.com/file/d/1VSw9D64BxajK74akcLjht63MIuq1geQ7/view?usp=drive_link",
+      link: "https://code.sliit.org/certificates/7hgu7jancd",
+    },
+    {
+      topic: "AI/ML Engineer - Stage 2",
+      company: "SLIIT",
+      date: "Jan 2027",
+      dec1: "bpl3sw86eu",
+      link: "https://code.sliit.org/certificates/bpl3sw86eu",
     },
     {
       topic: "Cybersecurity Essentials",
@@ -98,6 +108,14 @@ const About = () => {
       date: "Oct 2022",
       dec1: "SLTC/IEEE/CS/CV3/108",
       link: "https://drive.google.com/file/d/1yZlp9U-z5QmXUzD7xelXTHg2RYf6_H9B/view?usp=sharing",
+    },
+    {
+      topic: "Rocketry Design & Modeling Competition",
+      company: "SEDS Sri Lanka",
+    },
+    {
+      topic: "Volunter of the Month",
+      company: "IEEE IAS SLTC and SEDS SLTC",
     }
   ];
 
@@ -306,30 +324,73 @@ const About = () => {
                 <Award className="w-6 h-6 mr-3 text-accent" />
                 Achievements
               </h2>
-                            <div className="border-t pt-3"></div>
+              <div className="border-t pt-3"></div>
               <div className="space-y-3">
                 {achievements.map((data, index) => (
-                <div className="space-y-4 border-b p-3">
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {data.topic}
-                    </h3>
-                    <p className="text-accent font-medium mb-2">
-                      {data.company}
-                    </p>
+                  <div className="space-y-4 border-b p-3">
+                    <div>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                        {data.topic}
+                      </h3>
+                      <p className="text-accent font-medium mb-2">
+                        {data.company}
+                      </p>
 
-                    <p className="text-muted-foreground mb-3">
-                      Issued: {data.date}
-                      <br /> {data.dec1 && <>Credential ID: {data.dec1}</>}
-                    </p>
+                      {data.date && (
+                        <p className="text-muted-foreground mb-3">
+                          Issued: {data.date}
+                          <br /> {data.dec1 && <>Credential ID: {data.dec1}</>}
+                        </p>
+                      )}
 
-                    <p className="text-m text-primary">
-                      <Link to={data.link}>Show credential</Link>
-                    </p>
+                      {data.link && (
+                        <p className="text-m text-primary">
+                          <Link to={data.link}>Show credential</Link>
+                        </p>
+                      )}
+                    </div>
                   </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+
+          {/* CTA Section - View CV */}
+          <div className="mt-20 fade-in-delayed">
+            <Card className="p-10 bg-gradient-to-r from-primary/10 to-secondary/10 backdrop-blur-sm border-primary/30 hover:border-primary/50 transition-all duration-300">
+              <div className="text-center space-y-6">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-3">
+                    Ready to See My Professional Profile?
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                    Download or view my comprehensive CV to see my complete
+                    qualifications, detailed experience, technical skills, and
+                    achievements. Learn more about how I can contribute to your
+                    team.
+                  </p>
                 </div>
-              ))}
-                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                  <Link to="/cv">
+                    <Button
+                      size="lg"
+                      className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-primary hover:scale-105 px-8 py-3"
+                    >
+                      <FileText className="w-5 h-5 mr-2" />
+                      View My CV
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                  <Link to="/contact">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="border-primary/50 hover:bg-primary/10 hover:text-white transition-all duration-300 hover:scale-105 px-8 py-3 hover:shadow-primary"
+                    >
+                      Get in Touch
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </Card>
           </div>
