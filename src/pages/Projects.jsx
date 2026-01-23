@@ -1,3 +1,5 @@
+'use client';
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -320,7 +322,7 @@ const Projects = () => {
                               className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
                             >
                               <img
-                                src={src}
+                                src={src.src}
                                 alt={`${project.title} screenshot ${index + 1}`}
                                 className="w-full h-40 object-cover hover:scale-110 transition-transform duration-300"
                               />
@@ -447,7 +449,7 @@ const Projects = () => {
         >
           <div className="relative w-11/12 h-11/12 px-4 justify-center align-middle flex">
             <img
-              src={selectedImage}
+              src={selectedImage.src}
               alt="Preview"
               className="rounded-xl shadow-lg w-full max-h-[80vh] object-contain"
             />

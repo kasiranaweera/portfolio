@@ -221,7 +221,7 @@ const Home = () => {
               <h1 className="text-5xl md:text-7xl font-bold gradient-text animate-scale-in">
                 AI is the Engine that Powers the Future{" "}
               </h1>
-              <div class="h-4"></div>
+              <div className="h-4"></div>
               <p className="text-lg text-accent font-medium bg-accent/10 px-4 py-2 rounded-full inline-block">
                 🎓 Software Engineering (UG) &nbsp;&nbsp; 🧠 Aspiring AI
                 Engineer &nbsp;&nbsp; 🚀 Passionate about Gen & Agentic AI

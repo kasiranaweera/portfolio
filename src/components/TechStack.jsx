@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react"
 import Image_Techtool from "../../assets/image.png";
 
@@ -37,7 +39,7 @@ export default function TechStack() {
         {/* LEFT SIDE */}
         <div className="flex flex-col border p-6 rounded-lg bg-card/50 backdrop-blur-sm">
           <img
-            src={Image_Techtool}
+            src={Image_Techtool.src}
             alt="Tech Stack Illustration"
             className="w-full h-64 object-cover rounded-lg shadow-md mb-4"
           />

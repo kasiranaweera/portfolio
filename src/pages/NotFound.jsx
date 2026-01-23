@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Home, ArrowLeft, Search, Brain } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
@@ -38,7 +38,7 @@ const NotFound = () => {
                 size="lg" 
                 className="bg-gradient-primary hover:opacity-90 transition-all duration-300 hover:scale-105"
               >
-                <Link to="/">
+                <Link href="/">
                   <Home className="w-4 h-4 mr-2" />
                   Back to Home
                 </Link>
@@ -50,7 +50,7 @@ const NotFound = () => {
                 size="lg"
                 className="border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:scale-105"
               >
-                <Link to="/projects">
+                <Link href="/projects">
                   <Search className="w-4 h-4 mr-2" />
                   Explore Projects
                 </Link>
@@ -62,25 +62,25 @@ const NotFound = () => {
               <p className="text-sm text-muted-foreground mb-4">Looking for something specific?</p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <Link 
-                  to="/about" 
+                  href="/about" 
                   className="text-primary hover:text-accent transition-colors"
                 >
                   About Me
                 </Link>
                 <Link 
-                  to="/work" 
+                  href="/work" 
                   className="text-primary hover:text-accent transition-colors"
                 >
                   Work Experience
                 </Link>
                 <Link 
-                  to="/projects" 
+                  href="/projects" 
                   className="text-primary hover:text-accent transition-colors"
                 >
                   Projects
                 </Link>
                 <Link 
-                  to="/contact" 
+                  href="/contact" 
                   className="text-primary hover:text-accent transition-colors"
                 >
                   Contact

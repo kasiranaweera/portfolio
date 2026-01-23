@@ -10,7 +10,7 @@ import {
   FileText,
   ExternalLink,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const About = () => {
@@ -309,7 +309,7 @@ const About = () => {
                     </p>
 
                     <p className="text-m text-primary">
-                      <Link to={data.link}>Show credential</Link>
+                      <Link href={data.link}>Show credential</Link>
                     </p>
                   </div>
                 </div>
@@ -345,7 +345,7 @@ const About = () => {
 
                       {data.link && (
                         <p className="text-m text-primary">
-                          <Link to={data.link}>Show credential</Link>
+                          <Link href={data.link}>Show credential</Link>
                         </p>
                       )}
                     </div>
@@ -371,7 +371,7 @@ const About = () => {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                  <Link to="/cv">
+                  <Link href="/cv">
                     <Button
                       size="lg"
                       className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-primary hover:scale-105 px-8 py-3"
@@ -381,7 +381,7 @@ const About = () => {
                       <ExternalLink className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
-                  <Link to="/contact">
+                  <Link href="/contact">
                     <Button
                       variant="outline"
                       size="lg"

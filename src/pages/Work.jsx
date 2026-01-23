@@ -1,3 +1,5 @@
+'use client';
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -433,7 +435,7 @@ const Work = () => {
                                         className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300"
                                       >
                                         <img
-                                          src={src}
+                                          src={src.src}
                                           alt={`Gallery ${index}`}
                                           className="w-full h-24 object-cover hover:scale-110 transition-transform duration-300"
                                         />
@@ -512,7 +514,7 @@ const Work = () => {
                             className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                           >
                             <img
-                              src={src}
+                              src={src.src}
                               alt={`Gallery ${index}`}
                               className="w-full h-20 object-cover hover:scale-110 transition-transform duration-300"
                             />

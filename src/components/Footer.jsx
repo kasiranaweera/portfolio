@@ -1,4 +1,7 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+'use client';
+
+import Link from 'next/link';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -6,7 +9,6 @@ export default function Footer() {
       <div className="container mx-auto px-6 sm:px-8">
         {/* Grid layout adjusts for mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          
           {/* Contact Info */}
           <div className="space-y-4 md:pr-24 text-center md:text-left">
             <h3 className="text-xl font-semibold mb-4">Get In Touch</h3>
@@ -25,6 +27,8 @@ export default function Footer() {
             <div className="fade-in-delayed flex justify-center md:justify-start space-x-6 my-4 pt-2">
               <a
                 href="https://github.com/kasiranaweera"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-gray-200 dark:bg-secondary/50 hover:bg-gray-300 dark:hover:bg-secondary transition-all duration-300 hover:scale-110"
                 aria-label="GitHub"
               >
@@ -32,18 +36,20 @@ export default function Footer() {
               </a>
               <a
                 href="https://www.linkedin.com/in/kasi-ranaweera"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-gray-200 dark:bg-secondary/50 hover:bg-gray-300 dark:hover:bg-secondary transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a
+              <Link
                 href="/contact"
                 className="p-3 rounded-full bg-gray-200 dark:bg-secondary/50 hover:bg-gray-300 dark:hover:bg-secondary transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
                 <Mail className="w-6 h-6" />
-              </a>
+              </Link>
             </div>
             <p className="text-gray-600 dark:text-gray-300 text-sm max-w-md mx-auto md:mx-0">
               Follow me for updates on latest projects and tech insights.
@@ -55,7 +61,8 @@ export default function Footer() {
         <div className="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
             © {new Date().getFullYear()} | KASI Ranaweera
-            <br />All rights reserved
+            <br />
+            All rights reserved
           </p>
         </div>
       </div>
