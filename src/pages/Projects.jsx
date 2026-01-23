@@ -1,7 +1,11 @@
+'use client';
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink, Star, Code2 } from "lucide-react";
+import { ProjectImageModal } from "@/components/ProjectImageModal";
+import { useState } from "react";
 
 import imgp11 from "../../assets/img-p11.png";
 import imgp12 from "../../assets/img-p12.png";
@@ -176,7 +180,9 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-background py-20">
+    <ProjectImageModal>
+      {({ openModal, selectedImage }) => (
+        <div className="min-h-screen bg-gradient-background py-20">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -313,6 +319,7 @@ const Projects = () => {
                             <div
                               key={index}
                               className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+                              onClick={() => openModal(src.src)}
                             >
                               <img
                                 src={src.src}
@@ -430,11 +437,12 @@ const Projects = () => {
                 </Button>
               </a>
             </Card>
+          </div>
         </div>
       </div>
-
-      </div>
-    </div>
+        </div>
+        )}
+    </ProjectImageModal>
   );
 };
 

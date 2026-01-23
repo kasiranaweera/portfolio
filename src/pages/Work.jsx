@@ -1,6 +1,10 @@
+'use client';
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ProjectImageModal } from "@/components/ProjectImageModal";
+import { useState } from "react";
 import {
   Calendar,
   MapPin,
@@ -205,7 +209,9 @@ const Work = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-background py-20">
+    <ProjectImageModal>
+      {({ openModal, selectedImage }) => (
+        <div className="min-h-screen bg-gradient-background py-20">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -425,6 +431,7 @@ const Work = () => {
                                       <div
                                         key={index}
                                         className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+                                        onClick={() => openModal(src.src)}
                                       >
                                         <img
                                           src={src.src}
@@ -503,6 +510,7 @@ const Work = () => {
                           <div
                             key={index}
                             className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+                            onClick={() => openModal(src.src)}
                           >
                             <img
                               src={src.src}
@@ -542,7 +550,9 @@ const Work = () => {
           </div>
         </div>
       </div>
-    </div>
+        </div>
+        )}
+    </ProjectImageModal>
   );
 };
 

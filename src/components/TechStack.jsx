@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image_Techtool from "../../assets/image.png";
+import { Computer, Star } from "lucide-react";
 
 const technologies = [
   { name: "React", icon: "https://raw.githubusercontent.com/kasiranaweera/kasiranaweera/8f16b8d476fbe24e6a21f5f40d35d7ba6ad0eabb/icons/react_dark.svg", color: "border-blue-400 hover:border-blue-500" },
@@ -34,29 +35,43 @@ export default function TechStack() {
 
   return (
     <div className="fade-in-delayed mb-12 mt-24">
-      <h3 className="text-2xl font-semibold mb-6 text-foreground">Tech Stack</h3>
+      {/* Header */}
+      <div className="mb-12">
+        <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
+          <Computer className="w-8 h-8 mr-3 text-accent" />
+          Tech Stack & Expertise
+        </h3>
+        <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full"></div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        {/* LEFT SIDE */}
-        <div className="flex flex-col border p-6 rounded-lg bg-card/50 backdrop-blur-sm">
-          <img
-            src={Image_Techtool.src}
-            alt="Tech Stack Illustration"
-            className="w-full h-64 object-cover rounded-lg shadow-md mb-4"
-          />
-          <div className="text-sm leading-relaxed text-muted-foreground">
-            I work with a diverse set of tools and technologies to build efficient, scalable AI-powered applications and
-            full-stack solutions. My expertise covers frontend and backend development, machine learning frameworks,
-            cloud deployment, and software engineering best practices; enabling me to deliver end-to-end intelligent
-            systems.
+        {/* LEFT SIDE - Image & Description */}
+        <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-gradient-primary/30 hover:border-gradient-primary/60 transition-all duration-500 hover:shadow-2xl p-8">
+          {/* Animated background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/15 group-hover:via-accent/5 group-hover:to-primary/10 transition-all duration-500"></div>
+          
+          {/* Shimmer effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          
+          <div className="relative flex flex-col h-full">
+            <img
+              src={Image_Techtool.src}
+              alt="Tech Stack Illustration"
+              className="w-full h-64 object-cover rounded-xl shadow-lg mb-6 group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+              I work with a diverse set of tools and technologies to build efficient, scalable AI-powered applications and full-stack solutions. My expertise covers frontend and backend development, machine learning frameworks, cloud deployment, and software engineering best practices; enabling me to deliver end-to-end intelligent systems.
+            </div>
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
-        <div className="flex flex-col gap-8">
+        {/* RIGHT SIDE - Tech Icons */}
+        <div className="flex flex-col gap-12">
           {/* Core Tools */}
-          <div className="text-center">
-            <div className="relative mb-8">
-              <h4 className="text-xl font-bold text-foreground mb-6">Core Tools</h4>
+          <div>
+            <div className="mb-8">
+              <h4 className="text-2xl font-bold text-foreground mb-4 text-center">Core Technologies</h4>
+              <div className="h-0.5 w-16 bg-gradient-primary mx-auto rounded-full"></div>
             </div>
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-md mx-auto">
               {technologies.map((tech) => (
@@ -67,19 +82,24 @@ export default function TechStack() {
                   onMouseLeave={() => setHoveredTech(null)}
                 >
                   <div
-                    className={`w-16 h-16 rounded-lg bg-white border-2 ${tech.color} flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-md hover:shadow-lg ${hoveredTech === tech.name ? "scale-110 shadow-lg" : ""}`}
+                    className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-2 border-gradient-primary/40 hover:border-gradient-primary/80 flex items-center justify-center transition-all duration-300 group-hover:scale-120 group-hover:shadow-xl group-hover:-translate-y-2 ${hoveredTech === tech.name ? "scale-125 shadow-2xl -translate-y-3 bg-gradient-primary/20" : ""}`}
                   >
-                    <img src={tech.icon} alt={`${tech.name} logo`} className="w-12 h-12 object-contain" />
+                    <img src={tech.icon} alt={`${tech.name} logo`} className="w-8 h-8 object-contain" />
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur"></div>
                   </div>
-                  <p className="text-xs font-medium text-foreground mt-2 text-center">{tech.name}</p>
+                  <p className="text-xs font-semibold text-foreground mt-3 text-center group-hover:text-primary transition-colors">{tech.name}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* AI & ML Tools */}
-          <div className="text-center">
-            <h4 className="text-xl font-bold text-foreground mb-6">AI & ML Technologies</h4>
+          <div>
+            <div className="mb-8">
+              <h4 className="text-2xl font-bold text-foreground mb-4 text-center">AI & ML Technologies</h4>
+              <div className="h-0.5 w-16 bg-gradient-primary mx-auto rounded-full"></div>
+            </div>
             <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 gap-4 max-w-2xl mx-auto">
               {aiTechnologies.map((tech, index) => (
                 <div
@@ -89,11 +109,13 @@ export default function TechStack() {
                   onMouseLeave={() => setHoveredTech(null)}
                 >
                   <div
-                    className={`w-12 h-12 rounded-lg bg-white border-2 ${tech.color} flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-sm hover:shadow-md ${hoveredTech === tech.name ? "scale-110 shadow-md" : ""}`}
+                    className={`relative w-14 h-14 rounded-xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-2 border-gradient-primary/40 hover:border-gradient-primary/80 flex items-center justify-center transition-all duration-300 group-hover:scale-120 group-hover:shadow-lg group-hover:-translate-y-2 ${hoveredTech === tech.name ? "scale-125 shadow-xl -translate-y-3 bg-gradient-primary/20" : ""}`}
                   >
-                    <img src={tech.icon} alt={`${tech.name} logo`} className="w-7 h-7 object-contain" />
+                    <img src={tech.icon} alt={`${tech.name} logo`} className="w-6 h-6 object-contain" />
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 rounded-xl bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur"></div>
                   </div>
-                  <p className="text-xs font-medium text-foreground mt-2 text-center">{tech.name}</p>
+                  <p className="text-xs font-semibold text-foreground mt-2 text-center group-hover:text-primary transition-colors">{tech.name}</p>
                 </div>
               ))}
             </div>

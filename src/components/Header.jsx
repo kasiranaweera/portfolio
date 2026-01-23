@@ -13,8 +13,17 @@ const Header = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -36,34 +45,44 @@ const Header = () => {
   if (!mounted) return null;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      isScrolled 
+        ? "border-b border-border/20 bg-background/98 backdrop-blur-xl supports-[backdrop-filter]:bg-background/95 shadow-xl" 
+        : "border-b border-border/10 bg-background/90 backdrop-blur-lg"
+    }`}>
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="h-8 w-8 rounded bg-gradient-primary flex items-center justify-center font-bold text-2xl">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="h-9 w-9 rounded-lg bg-gradient-primary flex items-center justify-center font-bold text-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/50">
               S
             </div>
-            <span className="font-bold text-xl gradient-text">
+            <span className="font-bold text-lg gradient-text hover:opacity-80 transition-opacity">
               KASI Ranaweera
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary relative',
-                  isActive(item.href) ? 'text-primary' : 'text-muted-foreground'
+                  'text-sm font-medium px-3 py-2 rounded-lg transition-all duration-300 relative group',
+                  isActive(item.href) 
+                    ? 'text-primary bg-primary/10' 
+                    : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
                 )}
               >
                 {item.name}
-                {isActive(item.href) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-primary rounded-full" />
-                )}
+                {/* Animated underline on hover */}
+                <span className={cn(
+                  'absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-primary rounded-full transition-all duration-300',
+                  isActive(item.href) 
+                    ? 'opacity-100 scale-x-100' 
+                    : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
+                )} />
               </Link>
             ))}
           </nav>
@@ -74,7 +93,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="w-9 px-0 relative"
+              className="w-9 px-0 relative rounded-lg hover:bg-primary/10 transition-colors"
               onClick={toggleTheme}
             >
               <Sun
@@ -96,7 +115,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden w-9 px-0"
+              className="md:hidden w-9 px-0 rounded-lg hover:bg-primary/10 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -110,21 +129,28 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden animate-fade-in">
-            <nav className="flex flex-col space-y-3 pb-4 pt-2">
+          <div className="md:hidden animate-fade-in border-t border-border/10">
+            <nav className="flex flex-col space-y-1 py-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-sm font-medium transition-colors hover:text-primary px-2 py-1 rounded',
+                    'text-sm font-medium px-3 py-2 rounded-lg transition-all duration-300 relative group',
                     isActive(item.href)
-                      ? 'text-primary bg-accent'
-                      : 'text-muted-foreground'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
+                  {/* Animated underline on hover for mobile */}
+                  <span className={cn(
+                    'absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-primary rounded-full transition-all duration-300',
+                    isActive(item.href) 
+                      ? 'opacity-100 scale-x-100' 
+                      : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
+                  )} />
                 </Link>
               ))}
             </nav>
