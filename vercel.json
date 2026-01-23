@@ -1,13 +1,24 @@
 {
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev",
-  "env": {
-    "GMAIL_USER": {
-      "description": "Gmail account email address"
-    },
-    "GMAIL_PASS": {
-      "description": "Gmail application password"
-    }
-  }
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/about",
+            "dest": "/"
+        },
+        {
+            "src": "/work",
+            "dest": "/"
+        },
+        {
+            "src": "/contact",
+            "dest": "/"
+        },
+        {
+            "src": "/projects",
+            "dest": "/"
+        }
+    ]
 }
