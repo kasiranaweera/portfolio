@@ -23,7 +23,7 @@ export default function Footer() {
               <div className="h-10 w-10 rounded bg-gradient-primary flex items-center justify-center font-bold text-xl transition-transform duration-300 group-hover:scale-110">
                 S
               </div>
-              <span className="font-bold text-lg gradient-text">KASI</span>
+              <span className="font-bold text-lg gradient-text">KASI Ranaweera</span>
             </Link>
             <p className="text-muted-foreground leading-relaxed max-w-sm">
               Building intelligent solutions through AI, machine learning, and full-stack development. Let's create something extraordinary together.

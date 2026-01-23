@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import SparkleAnimation from "../components/SparkleAnimation";
 import RecentProjectsCarousel from "../components/RecentProjectsCarousel";
+import AnimatedBackground from "../components/AnimatedBackground";
 import {
   Mail,
   Star,
@@ -143,9 +144,10 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-background overflow-hidden">
+      <AnimatedBackground />
       <SparkleAnimation />
 
-      <div className="relative z-10 container mx-auto px-6 py-20 lg:py-32">
+      <div className="relative z-10 container mx-auto px-6 py-20 lg:py-32 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto">
           {/* HERO SECTION */}
           <div className="text-center mb-20 lg:mb-32">
@@ -209,7 +211,7 @@ const Home = () => {
               <a href="/projects">
                 <Button
                   size="lg"
-                  className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-primary hover:scale-105 px-8 py-3 animate-pulse-glow group"
+                  className="bg-gradient-primary hover:opacity-90 transition-all duration-2000 glow-primary hover:scale-105 px-8 py-3 animate-pulse-glow group"
                 >
                   <Rocket className="w-5 h-5 mr-2 group-hover:translate-y-[-2px] transition-transform" />
                   Explore My Work
@@ -399,10 +401,10 @@ const Home = () => {
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-accent opacity-5 rounded-full blur-3xl pointer-events-none"></div>
               
               <div className="relative z-10">
-                <h3 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                <h3 className="text-3xl md:text-5xl pb-3 font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                   Ready to Build the Future Together?
                 </h3>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed group-hover:text-foreground transition-colors">
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-8 mb-10 leading-relaxed group-hover:text-foreground transition-colors">
                   Join me in creating intelligent, impactful solutions through AI, machine learning, and cutting-edge software engineering. Let's transform ideas into reality.
                 </p>
                 <a href="/contact">
