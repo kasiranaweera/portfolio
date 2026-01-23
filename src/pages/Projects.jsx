@@ -1,9 +1,7 @@
-'use client';
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Star, Code2, X } from "lucide-react";
+import { Github, ExternalLink, Star, Code2 } from "lucide-react";
 
 import imgp11 from "../../assets/img-p11.png";
 import imgp12 from "../../assets/img-p12.png";
@@ -14,12 +12,8 @@ import imgp31 from "../../assets/img-p31.jpeg";
 import imgp32 from "../../assets/img-p32.jpeg";
 import imgp41 from "../../assets/img-p41.png";
 import imgp42 from "../../assets/img-p42.png";
-import { useState } from "react";
 
 const Projects = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const closeModal = () => setSelectedImage(null);
-
   const featuredProjects = [
     {
       title: "EduWingz",
@@ -318,7 +312,6 @@ const Projects = () => {
                           {project.images.map((src, index) => (
                             <div
                               key={index}
-                              onClick={() => setSelectedImage(src)}
                               className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
                             >
                               <img
@@ -437,32 +430,10 @@ const Projects = () => {
                 </Button>
               </a>
             </Card>
-          </div>
         </div>
       </div>
 
-      {/* Popup Modal */}
-      {selectedImage && (
-        <div
-          onClick={closeModal}
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50"
-        >
-          <div className="relative w-11/12 h-11/12 px-4 justify-center align-middle flex">
-            <img
-              src={selectedImage.src}
-              alt="Preview"
-              className="rounded-xl shadow-lg w-full max-h-[80vh] object-contain"
-            />
-          </div>
-          <button
-            onClick={closeModal}
-            className="absolute top-5 right-5 bg-black/60 text-white rounded-full p-3 hover:bg-black transition"
-            aria-label="Close image preview"
-          >
-            <X className="w-6 h-6" />
-          </button>
-        </div>
-      )}
+      </div>
     </div>
   );
 };

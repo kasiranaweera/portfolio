@@ -1,9 +1,6 @@
-'use client';
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import {
   Calendar,
   MapPin,
@@ -11,7 +8,6 @@ import {
   Building,
   Users,
   Trophy,
-  X,
   Github,
   Star,
   GitFork,
@@ -46,9 +42,6 @@ import imgv83 from "../../assets/img-v83.jpg";
 import imgv91 from "../../assets/img-v91.jpeg";
 
 const Work = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const closeModal = () => setSelectedImage(null);
-
   const workExperience = [
     {
       company: "Orel IT",
@@ -431,8 +424,7 @@ const Work = () => {
                                     {work.images.map((src, index) => (
                                       <div
                                         key={index}
-                                        onClick={() => setSelectedImage(src)}
-                                        className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300"
+                                        className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
                                       >
                                         <img
                                           src={src.src}
@@ -481,12 +473,12 @@ const Work = () => {
                       </h3>
                       <div className="grid grid-cols-1 gap-4">
                         {project.projects.map((proj, idx) => (
-                          <div className="border rounded-xl gap-3 bg-background/30 border-border/50 p-6">
+                          <div key={idx} className="border rounded-xl gap-3 bg-background/30 border-border/50 p-6">
                             <h5 className="text-l text-accent font-semibold pb-3">
                               {proj.name}
                             </h5>
                             {proj.description.map((desc, i) => (
-                              <div className="flex gap-2">
+                              <div key={i} className="flex gap-2">
                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                   {"-"}
                                 </p>
@@ -510,8 +502,7 @@ const Work = () => {
                         {project.images.map((src, index) => (
                           <div
                             key={index}
-                            onClick={() => setSelectedImage(src)}
-                            className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                            className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
                           >
                             <img
                               src={src.src}
@@ -551,27 +542,6 @@ const Work = () => {
           </div>
         </div>
       </div>
-      {/* Popup Modal */}
-      {selectedImage && (
-        <div
-          onClick={closeModal}
-          className="fixed inset-0 bg-black/10 backdrop-blur-sm flex items-center justify-center z-50"
-        >
-          <div className="relative w-11/12 h-11/12 px-4 justify-center align-middle flex">
-            <img
-              src={selectedImage.src}
-              alt="Preview"
-              className="rounded-xl shadow-lg w-full max-h-[80vh] object-contain"
-            />
-          </div>
-          <button
-            onClick={closeModal}
-            className="absolute top-5 right-5 bg-black/60 text-white rounded-full p-3 hover:bg-black transition"
-          >
-            <X className="w-6 h-6" />
-          </button>
-        </div>
-      )}
     </div>
   );
 };

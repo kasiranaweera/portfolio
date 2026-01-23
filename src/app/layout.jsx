@@ -60,11 +60,47 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "K.A.S.I. Ranaweera (Sithija Ishan Ranaweera)",
+    url: "https://kasiranaweera.vercel.app",
+    image: "https://kasiranaweera.vercel.app/og-image.png",
+    description: "Software Engineer specialized in AI, ML, and Full-Stack Development",
+    jobTitle: "Software Engineer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Freelance"
+    },
+    knowsAbout: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Deep Learning",
+      "Generative AI",
+      "Agentic AI",
+      "Full-Stack Development",
+      "React",
+      "Next.js",
+      "Python",
+      "PyTorch",
+      "TensorFlow"
+    ],
+    sameAs: [
+      "https://github.com/kasiranaweera",
+      "https://www.linkedin.com/in/sithija-ishan-ranaweera/",
+      "https://twitter.com/KasiRanaweera"
+    ]
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="google-site-verification" content="FIG9y5d1ZovxTZBlRFuZJ0hgTP5jeENMd3rtl2V2wWE" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body>
         <ClientLayout>{children}</ClientLayout>
