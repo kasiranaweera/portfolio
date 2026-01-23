@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": [
@@ -26,7 +27,7 @@
     "jsx": "preserve",
     "incremental": true,
     "noEmit": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "isolatedModules": true,
     "plugins": [
       {
