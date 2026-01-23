@@ -559,7 +559,7 @@ const Work = () => {
         >
           <div className="relative w-11/12 h-11/12 px-4 justify-center align-middle flex">
             <img
-              src={selectedImage}
+              src={selectedImage.src}
               alt="Preview"
               className="rounded-xl shadow-lg w-full max-h-[80vh] object-contain"
             />
