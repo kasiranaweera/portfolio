@@ -115,7 +115,7 @@ export function ContactForm() {
           id="message"
           name="message"
           placeholder="Share your thoughts, questions, or collaboration ideas..."
-          rows={6}
+          rows={7}
           required
           className="bg-secondary/50 border-border/50 focus:border-primary/50 placeholder-muted-foreground/50 resize-none"
         />

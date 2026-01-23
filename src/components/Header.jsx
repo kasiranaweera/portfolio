@@ -3,10 +3,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
+
+import Logo from "../../assets/logo.png"
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -55,7 +58,7 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="h-9 w-9 rounded-lg bg-gradient-primary flex items-center justify-center font-bold text-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/50">
-              S
+              <Image src={Logo} alt="logo" width={36} height={36} className='object-cover' />
             </div>
             <span className="font-bold text-lg gradient-text hover:opacity-80 transition-opacity">
               KASI Ranaweera

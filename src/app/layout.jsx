@@ -4,6 +4,11 @@ import { ClientLayout } from './client-layout';
 export const metadata = {
   title: 'KASI Ranaweera - Software Engineer',
   description: 'K.A.S.I. Ranaweera (Sithija Ranaweera) - Software Engineer specialized in AI, ML, and Full-Stack Development',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   keywords: [
     'Software Engineer',
     'AI Developer',

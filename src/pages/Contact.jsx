@@ -1,5 +1,9 @@
+'use client';
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import AnimatedBackground from "../components/AnimatedBackground";
+import SparkleAnimation from "../components/SparkleAnimation";
 import {
   Mail,
   Github,
@@ -12,6 +16,8 @@ import {
   Clock,
   Facebook,
   Globe,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
@@ -69,25 +75,27 @@ const Contact = () => {
     },
   ];
 
-  // const collaborationAreas = [
-  //   "AI Research & Publications",
-  //   "Open Source Projects",
-  //   "Speaking Engagements",
-  //   "Technical Mentoring",
-  //   "Startup Consulting",
-  //   "Research Internships"
-  // ];
-
   return (
-    <div className="min-h-screen bg-gradient-background py-20">
-      <div className="container mx-auto px-6">
+    <div className="relative min-h-screen bg-gradient-background overflow-hidden">
+      <AnimatedBackground />
+      <SparkleAnimation />
+
+      <div className="relative z-10 container mx-auto px-6 py-20 lg:py-32 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
+            {/* Animated Badge */}
+            <div className="fade-in-up mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
+                <Sparkles className="w-4 h-4 text-primary animate-spin-slow" />
+                <span className="text-sm font-medium text-primary">Let's Connect</span>
+              </div>
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6 animate-slide-up">
               Get In Touch
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in">
               Let's collaborate on exciting AI & Web projects, discuss research
               opportunities, or explore how we can push the boundaries of
               artificial intelligence together.
@@ -96,13 +104,17 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50 animate-fade-in">
-                <h2 className="text-2xl font-semibold text-foreground mb-6 flex items-center">
-                  <MessageCircle className="w-6 h-6 mr-3 text-primary" />
-                  Send a Message
-                </h2>
+              <Card className="p-8 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-border/50 animate-fade-in hover:border-primary/60 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group cursor-pointer relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-primary/5 transition-all duration-500 rounded-lg"></div>
+                
+                <div className="relative">
+                  <h2 className="text-2xl font-semibold text-foreground mb-6 flex items-center group-hover:text-primary transition-colors">
+                    <MessageCircle className="w-6 h-6 mr-3 text-primary" />
+                    Send a Message
+                  </h2>
 
-                <ContactForm />
+                  <ContactForm />
+                </div>
               </Card>
             </div>
 
@@ -110,120 +122,121 @@ const Contact = () => {
             <div className="space-y-6">
               {/* Contact Methods */}
               <Card
-                className="p-6 bg-card/50 backdrop-blur-sm border-border/50 animate-fade-in"
+                className="p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-border/50 animate-fade-in hover:border-primary/60 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group cursor-pointer relative"
                 style={{ animationDelay: "0.2s" }}
               >
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Contact Methods
-                </h3>
-                <div className="space-y-4">
-                  {contactMethods.map((method, index) => (
-                    <a
-                      key={index}
-                      href={method.link}
-                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors group"
-                    >
-                      <div
-                        className={`p-2 rounded-lg ${
-                          method.primary ? "bg-primary/10" : "bg-secondary/10"
-                        }`}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-primary/5 transition-all duration-500 rounded-lg"></div>
+                
+                <div className="relative">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center group-hover:text-primary transition-colors">
+                    <Mail className="w-5 h-5 mr-2 text-primary" />
+                    Contact Methods
+                  </h3>
+                  <div className="space-y-4">
+                    {contactMethods.map((method, index) => (
+                      <a
+                        key={index}
+                        href={method.link}
+                        className="flex items-start space-x-3 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300 group/item"
                       >
-                        <method.icon
-                          className={`w-4 h-4 ${
-                            method.primary
-                              ? "text-primary"
-                              : "text-secondary-foreground"
+                        <div
+                          className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${
+                            method.primary ? "bg-primary/10" : "bg-secondary/10"
                           }`}
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">
-                          {method.label}
-                        </p>
-                        <p className="text-sm text-accent">{method.value}</p>
-                        <p className="text-xs text-muted-foreground">
-                          {method.description}
-                        </p>
-                      </div>
-                      <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                  ))}
+                        >
+                          <method.icon
+                            className={`w-4 h-4 ${
+                              method.primary
+                                ? "text-primary"
+                                : "text-secondary-foreground"
+                            }`}
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                            {method.label}
+                          </p>
+                          <p className="text-sm text-accent">{method.value}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {method.description}
+                          </p>
+                        </div>
+                        <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </Card>
-
-              {/* Quick Info */}
-              <Card
-                className="p-6 bg-card/50 backdrop-blur-sm border-border/50 animate-fade-in"
-                style={{ animationDelay: "0.4s" }}
-              >
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Quick Info
-                </h3>
-                <div className="space-y-4">
-                  {quickInfo.map((info, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="p-2 rounded-lg bg-accent/10">
-                        <info.icon className="w-4 h-4 text-accent" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">
-                          {info.label}
-                        </p>
-                        <p className="text-sm text-accent">{info.value}</p>
-                        <p className="text-xs text-muted-foreground">
-                          {info.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-
-              {/* Collaboration Areas
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                <h3 className="text-xl font-semibold text-foreground mb-4">Open to Collaboration</h3>
-                <div className="space-y-2">
-                  {collaborationAreas.map((area, index) => (
-                    <div key={index} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">{area}</span>
-                    </div>
-                  ))}
-                </div>
-              </Card> */}
             </div>
           </div>
 
+          {/* Quick Info */}
+              <Card
+                className="p-6 mt-8 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-border/50 animate-fade-in hover:border-accent/60 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group cursor-pointer relative"
+                style={{ animationDelay: "0.4s" }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/10 group-hover:via-primary/5 group-hover:to-accent/5 transition-all duration-500 rounded-lg"></div>
+                
+                <div className="relative">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center group-hover:text-accent transition-colors">
+                    <Globe className="w-5 h-5 mr-2 text-accent" />
+                    Quick Info
+                  </h3>
+                  <div className="space-y-4 flex gap-8 justify-evenly items-center">
+                    {quickInfo.map((info, index) => (
+                      <div key={index} className="flex items-start space-x-3 py-3 px-8 rounded-lg hover:bg-accent/5 transition-all duration-300 group/item">
+                        <div className="p-2 rounded-lg bg-accent/10 flex-shrink-0">
+                          <info.icon className="w-4 h-4 text-accent" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground group-hover/item:text-accent transition-colors">
+                            {info.label}
+                          </p>
+                          <p className="text-sm text-accent">{info.value}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {info.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+
           {/* Call to Action */}
-          <div className="text-center mt-8 animate-fade-in">
-            <Card className="p-8 bg-card/30 backdrop-blur-sm border-border/50">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">
-                Let's Build the Future of AI
-              </h2>
-              <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">
-                Whether you're a researcher, entrepreneur, student, or fellow AI
-                enthusiast, I'm always excited to connect with like-minded
-                individuals who share a passion for advancing artificial
-                intelligence.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="bg-gradient-primary hover:opacity-90 transition-all duration-300 hover:scale-105"
-                >
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Schedule a Call
-                </Button>
-                <a href="https://github.com/kasiranaweera">
+          <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+            <Card className="p-8 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-border/50 hover:border-primary/60 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group cursor-pointer relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-primary/5 transition-all duration-500 rounded-lg"></div>
+              
+              <div className="relative">
+                <h2 className="text-2xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
+                  Ready to Collaborate?
+                </h2>
+                <p className="text-muted-foreground mb-6 max-w-3xl mx-auto group-hover:text-foreground transition-colors">
+                  Whether you're a researcher, entrepreneur, student, or fellow AI
+                  enthusiast, I'm always excited to connect with like-minded
+                  individuals who share a passion for advancing artificial
+                  intelligence.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
-                    variant="outline"
                     size="lg"
-                    className="border-accent/50 text-accent hover:bg-accent/10"
+                    className="bg-gradient-primary hover:opacity-90 transition-all duration-300 hover:scale-105 group/btn"
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Collaborate on GitHub
+                    <Calendar className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                    Schedule a Call
                   </Button>
-                </a>
+                  <a href="https://github.com/kasiranaweera">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="border-accent/50 text-accent hover:bg-accent/10 hover:border-accent/100 transition-all duration-300 w-full group/btn"
+                    >
+                      <Github className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                      Collaborate on GitHub
+                    </Button>
+                  </a>
+                </div>
               </div>
             </Card>
           </div>

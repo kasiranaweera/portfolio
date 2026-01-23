@@ -20,7 +20,11 @@ import {
   Brain,
   Bot,
   Code2,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
+import AnimatedBackground from "../components/AnimatedBackground";
+import SparkleAnimation from "../components/SparkleAnimation";
 import Image_Techtool from "../../assets/image.png";
 import imgv11 from "../../assets/img-v11.jpg";
 import imgv12 from "../../assets/img-v12.jpg";
@@ -211,21 +215,39 @@ const Work = () => {
   return (
     <ProjectImageModal>
       {({ openModal, selectedImage }) => (
-        <div className="min-h-screen bg-gradient-background py-20">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6 pb-3">
-              Work Experience
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              My professional journey in AI, ML, and software engineering
-              centers on developing innovative solutions and driving community
-              impact through leadership and volunteering in technology-focused
-              initiatives.
-            </p>
-          </div>
+        <div className="relative min-h-screen bg-gradient-background overflow-hidden">
+          <AnimatedBackground />
+          <SparkleAnimation />
+
+          <div className="relative z-10 container mx-auto px-6 py-20 lg:py-32 backdrop-blur-sm">
+            <div className="max-w-6xl mx-auto">
+              {/* HERO SECTION */}
+              <div className="text-center mb-20 lg:mb-32">
+                {/* Animated Badge */}
+                <div className="fade-in-up mb-8">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
+                    <Sparkles className="w-4 h-4 text-primary animate-spin-slow" />
+                    <span className="text-sm font-medium text-primary">Explore My Experience</span>
+                  </div>
+                </div>
+
+                {/* Hero Heading */}
+                <div className="fade-in-up space-y-6 mb-12">
+                  <div className="space-y-4">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold gradient-text leading-tight animate-slide-up">
+                      Work Experience &
+                      <br />
+                      <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-shimmer">
+                        Community Impact
+                      </span>
+                    </h1>
+                  </div>
+
+                  <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in">
+                    My professional journey in AI, ML, and software engineering centers on developing innovative solutions and driving community impact through leadership and volunteering in technology-focused initiatives.
+                  </p>
+                </div>
+              </div>
 
           {/* Timeline */}
           <div className="relative">
@@ -245,113 +267,117 @@ const Work = () => {
 
                 {/* Content */}
                 <div className="md:ml-20">
-                  <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/70 transition-all duration-300">
-                    {/* Header */}
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-                      <div>
-                        <h2 className="text-2xl font-bold text-foreground mb-2 flex items-center">
-                          <Building className="w-6 h-6 mr-3 text-primary" />
-                          {work.company}
-                        </h2>
-                        <h3 className="text-xl text-accent font-semibold mb-3">
-                          {work.role}
-                        </h3>
-                      </div>
-                      <div className="flex flex-col lg:items-end space-y-2">
-                        <Badge
-                          variant="secondary"
-                          className="bg-primary/10 text-primary"
-                        >
-                          {work.type}
-                        </Badge>
-                        <div className="flex items-center text-sm text-muted-foreground">
-                          <Calendar className="w-4 h-4 mr-1" />
-                          {work.period}
-                        </div>
-                        <div className="flex items-center text-sm text-muted-foreground">
-                          <MapPin className="w-4 h-4 mr-1" />
-                          {work.location}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {work.description}
-                    </p>
-
-                    {/* Key Achievements */}
-                    {work.achievements.length > 0 && (
-                      <>
-                        <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center">
-                            <Trophy className="w-5 h-5 mr-2 text-accent" />
-                            Key Achievements
-                          </h4>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            {work.achievements.map((achievement, idx) => (
-                              <div
-                                key={idx}
-                                className="flex items-start space-x-3"
-                              >
-                                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                                <p className="text-sm text-muted-foreground">
-                                  {achievement}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </>
-                    )}
-
-                    {/* Technologies */}
-                    {work.technologies.length > 0 && (
-                      <>
-                        <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-foreground mb-3">
-                            Technologies Used
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                            {work.technologies.map((tech) => (
-                              <Badge
-                                key={tech}
-                                variant="outline"
-                                className="border-primary/30 text-primary hover:bg-primary/10 transition-colors"
-                              >
-                                {tech}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      </>
-                    )}
-
-                    {/* Key Projects */}
-                    {work.projects.length > 0 && (
-                      <>
+                  <Card className="p-8 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-gradient-primary/30 hover:border-gradient-primary/60 transition-all duration-500 hover:shadow-2xl group cursor-pointer">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-primary/5 transition-all duration-500 rounded-lg"></div>
+                    
+                    <div className="relative">
+                      {/* Header */}
+                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                         <div>
-                          <h4 className="text-lg font-semibold text-foreground mb-3">
-                            Key Projects
-                          </h4>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {work.projects.map((project, idx) => (
-                              <div
-                                key={idx}
-                                className="bg-background/50 p-4 rounded-lg border border-border/50"
-                              >
-                                <h5 className="font-semibold text-foreground mb-2">
-                                  {project.name}
-                                </h5>
-                                <p className="text-sm text-muted-foreground">
-                                  {project.description}
-                                </p>
-                              </div>
-                            ))}
+                          <h2 className="text-2xl font-bold text-foreground mb-2 flex items-center group-hover:text-primary transition-colors">
+                            <Building className="w-6 h-6 mr-3 text-primary" />
+                            {work.company}
+                          </h2>
+                          <h3 className="text-xl text-accent font-semibold mb-3 group-hover:text-primary transition-colors">
+                            {work.role}
+                          </h3>
+                        </div>
+                        <div className="flex flex-col lg:items-end space-y-2">
+                          <Badge
+                            variant="secondary"
+                            className="bg-primary/10 text-primary border border-primary/30 group-hover:bg-primary/20 group-hover:border-primary/60 transition-all duration-300"
+                          >
+                            {work.type}
+                          </Badge>
+                          <div className="flex items-center text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                            <Calendar className="w-4 h-4 mr-1" />
+                            {work.period}
+                          </div>
+                          <div className="flex items-center text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                            <MapPin className="w-4 h-4 mr-1" />
+                            {work.location}
                           </div>
                         </div>
-                      </>
-                    )}
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground transition-colors">
+                        {work.description}
+                      </p>
+
+                      {/* Key Achievements */}
+                      {work.achievements.length > 0 && (
+                        <>
+                          <div className="mb-6">
+                            <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                              <Trophy className="w-5 h-5 mr-2 text-accent" />
+                              Key Achievements
+                            </h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              {work.achievements.map((achievement, idx) => (
+                                <div
+                                  key={idx}
+                                  className="flex items-start space-x-3"
+                                >
+                                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                                  <p className="text-sm text-muted-foreground">
+                                    {achievement}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      )}
+
+                      {/* Technologies */}
+                      {work.technologies.length > 0 && (
+                        <>
+                          <div className="mb-6">
+                            <h4 className="text-lg font-semibold text-foreground mb-3">
+                              Technologies Used
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {work.technologies.map((tech) => (
+                                <Badge
+                                  key={tech}
+                                  variant="outline"
+                                  className="border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+                                >
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      )}
+
+                      {/* Key Projects */}
+                      {work.projects.length > 0 && (
+                        <>
+                          <div>
+                            <h4 className="text-lg font-semibold text-foreground mb-3">
+                              Key Projects
+                            </h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              {work.projects.map((project, idx) => (
+                                <div
+                                  key={idx}
+                                  className="bg-background/50 p-4 rounded-lg border border-border/50"
+                                >
+                                  <h5 className="font-semibold text-foreground mb-2">
+                                    {project.name}
+                                  </h5>
+                                  <p className="text-sm text-muted-foreground">
+                                    {project.description}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </Card>
                 </div>
               </div>
@@ -359,10 +385,11 @@ const Work = () => {
           </div>
 
           <div className="pl-5 border-t pt-10">
-            <h2 className="text-3xl font-semibold mb-8 flex items-center animate-fade-in">
-              <Users className="w-7 h-7 mr-3 text-primary" />
-              Volunteering
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
+              <Users className="w-8 h-8 mr-3 text-primary" />
+              Volunteering & Community
             </h2>
+            <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full"></div>
           </div>
 
           {/* Voluntering */}
@@ -383,171 +410,216 @@ const Work = () => {
 
                 {/* Content */}
                 <div className="md:ml-20">
-                  <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/70 transition-all duration-300">
-                    {/* Header */}
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-                      <div>
-                        <h2 className="text-2xl font-bold text-foreground mb-2 flex items-center">
-                          <Building className="w-6 h-6 mr-3 text-primary" />
-                          {data.company}
-                        </h2>
-                      </div>
-                      <div className="flex flex-col lg:items-end space-y-2">
-                        <div className="flex items-center text-sm text-muted-foreground">
-                          <Calendar className="w-4 h-4 mr-1" />
-                          {data.period}
+                  <Card className="p-8 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-gradient-primary/30 hover:border-gradient-primary/60 transition-all duration-500 hover:shadow-2xl group cursor-pointer">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-primary/5 transition-all duration-500 rounded-lg"></div>
+                    
+                    <div className="relative">
+                      {/* Header */}
+                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                          <h2 className="text-2xl font-bold text-foreground mb-2 flex items-center group-hover:text-primary transition-colors">
+                            <Building className="w-6 h-6 mr-3 text-primary" />
+                            {data.company}
+                          </h2>
+                        </div>
+                        <div className="flex flex-col lg:items-end space-y-2">
+                          <div className="flex items-center text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                            <Calendar className="w-4 h-4 mr-1" />
+                            {data.period}
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Key Achievements */}
-                    {data.position.length > 0 && (
-                      <>
-                        {data.position.map((work, index) => (
-                          <div className="mb-6">
-                            <h3 className="text-xl text-accent font-semibold mb-3">
-                              {work.title}
-                              {` (${work.time})`}
-                            </h3>
-                            <div className="grid grid-cols-1 md:grid-cols-1 gap-3">
-                              {work.description.map((achievement, idx) => (
-                                <div
-                                  key={idx}
-                                  className="flex items-start space-x-3"
-                                >
-                                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                                  <p className="text-muted-foreground">
-                                    {achievement}
-                                  </p>
-                                </div>
-                              ))}
-                            </div>
-                            {/* Mini Gallery */}
-                            {work.images.length > 0 && (
-                              <>
-                                <div className="mx-auto py-3">
-                                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
-                                    {work.images.map((src, index) => (
-                                      <div
-                                        key={index}
-                                        className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
-                                        onClick={() => openModal(src.src)}
-                                      >
-                                        <img
-                                          src={src.src}
-                                          alt={`Gallery ${index}`}
-                                          className="w-full h-24 object-cover hover:scale-110 transition-transform duration-300"
-                                        />
-                                      </div>
-                                    ))}
+                      {/* Positions */}
+                      {data.position.length > 0 && (
+                        <>
+                          {data.position.map((work, index) => (
+                            <div key={index} className="mb-6 pb-6 border-b border-border/30 last:border-b-0 last:pb-0 group-hover:bg-primary/5 p-3 rounded-lg transition-all duration-300">
+                              <h3 className="text-xl text-accent font-semibold mb-3 group-hover:text-primary transition-colors">
+                                {work.title}
+                                {` (${work.time})`}
+                              </h3>
+                              <div className="space-y-2">
+                                {work.description.map((achievement, idx) => (
+                                  <div
+                                    key={idx}
+                                    className="flex items-start space-x-3"
+                                  >
+                                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                                    <p className="text-muted-foreground group-hover:text-foreground transition-colors">
+                                      {achievement}
+                                    </p>
                                   </div>
-                                </div>
-                              </>
-                            )}
-                          </div>
-                        ))}
-                      </>
-                    )}
+                                ))}
+                              </div>
+                              {/* Mini Gallery */}
+                              {work.images.length > 0 && (
+                                <>
+                                  <div className="mx-auto py-3">
+                                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
+                                      {work.images.map((src, index) => (
+                                        <div
+                                          key={index}
+                                          className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105"
+                                          onClick={() => openModal(src.src)}
+                                        >
+                                          <img
+                                            src={src.src}
+                                            alt={`Gallery ${index}`}
+                                            className="w-full h-24 object-cover hover:scale-110 transition-transform duration-300"
+                                          />
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </>
+                              )}
+                            </div>
+                          ))}
+                        </>
+                      )}
+                    </div>
                   </Card>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="fade-in-delayed mb-24 relative group mt-16">
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-accent/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+            
+            <div className="relative">
+              <div className="mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
+                  <Trophy className="w-8 h-8 mr-3 text-accent" />
+                  Projects & Initiatives
+                </h2>
+                <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full"></div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
             {otherProjects.map((project, index) => (
               <Card
                 key={index}
-                className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/70 transition-all duration-300 hover:scale-105 animate-fade-in"
+                className="p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-gradient-primary/30 hover:border-gradient-primary/60 transition-all duration-500 hover:shadow-2xl hover:scale-105 group cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <h3 className="text-2xl font-semibold text-foreground mb-1">
-                  {project.title}
-                </h3>
-                <h3 className="text-xl text-accent font-semibold mb-6">
-                  {project.rank}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                  {project.description}
-                </p>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-primary/5 transition-all duration-500 rounded-lg"></div>
+                
+                <div className="relative">
+                  <h3 className="text-2xl font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <h3 className="text-xl text-accent font-semibold mb-6 group-hover:text-primary transition-colors">
+                    {project.rank}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed group-hover:text-foreground transition-colors">
+                    {project.description}
+                  </p>
 
-                {/* Projects */}
-                {project.projects.length > 0 && (
-                  <>
-                    <div className="my-6">
-                      <h3 className="text-xl text-foreground font-semibold mb-6">
-                        Key Projects
-                      </h3>
-                      <div className="grid grid-cols-1 gap-4">
-                        {project.projects.map((proj, idx) => (
-                          <div key={idx} className="border rounded-xl gap-3 bg-background/30 border-border/50 p-6">
-                            <h5 className="text-l text-accent font-semibold pb-3">
-                              {proj.name}
-                            </h5>
-                            {proj.description.map((desc, i) => (
-                              <div key={i} className="flex gap-2">
-                                <p className="text-sm text-muted-foreground leading-relaxed">
-                                  {"-"}
-                                </p>
-                                <p className="text-sm text-muted-foreground leading-relaxed">
-                                  {desc}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                        ))}
+                  {/* Projects */}
+                  {project.projects.length > 0 && (
+                    <>
+                      <div className="my-6">
+                        <h3 className="text-xl text-foreground font-semibold mb-6 group-hover:text-primary transition-colors">
+                          Key Projects
+                        </h3>
+                        <div className="grid grid-cols-1 gap-4">
+                          {project.projects.map((proj, idx) => (
+                            <div key={idx} className="border rounded-xl gap-3 bg-background/30 border-border/50 p-6 hover:bg-background/50 hover:border-border/80 transition-all duration-300">
+                              <h5 className="text-l text-accent font-semibold pb-3 group-hover:text-primary transition-colors">
+                                {proj.name}
+                              </h5>
+                              {proj.description.map((desc, i) => (
+                                <div key={i} className="flex gap-2">
+                                  <p className="text-sm text-muted-foreground leading-relaxed">
+                                    {"-"}
+                                  </p>
+                                  <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                                    {desc}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </>
-                )}
+                    </>
+                  )}
 
-                {/* Mini Gallery */}
-                {project.images.length > 0 && (
-                  <>
-                    <div className="mx-auto py-3">
-                      <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 gap-3">
-                        {project.images.map((src, index) => (
-                          <div
-                            key={index}
-                            className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
-                            onClick={() => openModal(src.src)}
-                          >
-                            <img
-                              src={src.src}
-                              alt={`Gallery ${index}`}
-                              className="w-full h-20 object-cover hover:scale-110 transition-transform duration-300"
-                            />
-                          </div>
-                        ))}
+                  {/* Mini Gallery */}
+                  {project.images.length > 0 && (
+                    <>
+                      <div className="mx-auto py-3">
+                        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 gap-3">
+                          {project.images.map((src, index) => (
+                            <div
+                              key={index}
+                              className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105"
+                              onClick={() => openModal(src.src)}
+                            >
+                              <img
+                                src={src.src}
+                                alt={`Gallery ${index}`}
+                                className="w-full h-20 object-cover hover:scale-110 transition-transform duration-300"
+                              />
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </>
-                )}
+                    </>
+                  )}
+                </div>
               </Card>
             ))}
+            </div>
+          </div>
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-16 animate-fade-in">
-            <Card className="p-8 bg-card/30 backdrop-blur-sm border-border/50">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">
-                Interested in Collaboration?
-              </h2>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                I'm always open to discussing new opportunities, research
-                collaborations, or innovative AI projects. Let's build the
-                future of AI together!
-              </p>
-              <a href="/contact">
-              <Button
-                size="lg"
-                className="bg-gradient-primary hover:opacity-90 transition-all duration-300 hover:scale-105"
-              >
-                Get In Touch
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </Button></a>
-            </Card>
+          <div className="fade-in-delayed mb-12 relative group mt-24">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-gradient-primary/30 hover:border-gradient-primary/60 transition-all duration-500 p-12 md:p-16">
+              {/* Animated background overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/15 group-hover:via-accent/5 group-hover:to-primary/10 transition-all duration-500"></div>
+              
+              {/* Decorative corner accents */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-primary opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-accent opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+              
+              <div className="relative z-10 text-center space-y-6">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-3">
+                    Interested in Collaboration?
+                  </h2>
+                  <p className="text-lg mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed group-hover:text-foreground transition-colors">
+                    I'm always open to discussing new opportunities, research collaborations, or innovative AI projects. Let's build the future of AI together!
+                  </p>
+                </div>
+                <a href="/contact">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-primary hover:scale-105 px-10 py-3 group shadow-lg hover:shadow-2xl hover:shadow-primary/50"
+                  >
+                    <Sparkles className="w-5 h-5 mr-2 group-hover:animate-spin-slow" />
+                    Get In Touch
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
+
+          {/* Decorative Background Elements */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-primary rounded-full opacity-10 animate-float glow-primary blur-3xl"></div>
+          <div
+            className="absolute bottom-32 right-10 w-24 h-24 bg-gradient-secondary rounded-full opacity-15 animate-float blur-3xl"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 left-20 w-16 h-16 bg-gradient-accent rounded-full opacity-20 animate-float blur-2xl"
+            style={{ animationDelay: "2s" }}
+          ></div>
         </div>
       </div>
         </div>

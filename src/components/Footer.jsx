@@ -2,6 +2,9 @@
 
 import Link from 'next/link';
 import { Github, Linkedin, Mail, ArrowUp, Heart } from 'lucide-react';
+import Image from 'next/image';
+
+import Logo from "../../assets/logo.png"
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -21,7 +24,7 @@ export default function Footer() {
           <div className="space-y-4 text-center md:text-left">
             <Link href="/" className="inline-flex items-center space-x-2 group">
               <div className="h-10 w-10 rounded bg-gradient-primary flex items-center justify-center font-bold text-xl transition-transform duration-300 group-hover:scale-110">
-                S
+              <Image src={Logo} alt="logo" width={36} height={36} className='object-cover' />
               </div>
               <span className="font-bold text-lg gradient-text">KASI Ranaweera</span>
             </Link>
