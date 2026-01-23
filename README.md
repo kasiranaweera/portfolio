@@ -1,127 +1,95 @@
 # Personal Portfolio Website
 
-<div align="center">
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white)
 
-![Tech Stack](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-A modern, responsive portfolio website built with React, Vite, TypeScript, and Tailwind CSS.
-
-</div>
+A modern, responsive portfolio website showcasing my work, skills, and professional journey. Built with cutting-edge web technologies for optimal performance and user experience.
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-- Modern and responsive design
-- Interactive UI components using shadcn/ui
-- Smooth animations and transitions
-- Mobile-friendly layout
-- Dark/Light mode support
-- Pages for Home, About, Projects, Work, and Contact
-- Tech stack showcase
-- Custom UI components library
+- **Modern Design** - Clean, professional interface with smooth animations
+- **Fully Responsive** - Optimized for all devices and screen sizes
+- **Interactive Components** - Built with shadcn/ui for enhanced user experience
+- **Dark/Light Mode** - Theme switching for comfortable viewing
+- **Fast & Performant** - Leveraging Next.js and Bun for speed
+- **Contact Form** - Integrated email service for easy communication
 
-## �️ Tech Stack
+## 🛠️ Tech Stack
 
-- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
-- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
-- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
-- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
-- [shadcn/ui](https://ui.shadcn.com/) - Re-usable UI components
-- [Bun](https://bun.sh/) - All-in-one JavaScript runtime & toolkit
+- **[Next.js](https://nextjs.org/)** - React framework for production
+- **[React](https://reactjs.org/)** - UI component library
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first styling
+- **[shadcn/ui](https://ui.shadcn.com/)** - Premium UI components
+- **[Framer Motion](https://www.framer.com/motion/)** - Smooth animations
+- **[Bun](https://bun.sh/)** - Fast JavaScript runtime
+- **[EmailJS](https://www.emailjs.com/)** - Contact form integration
 
-## 📦 Project Structure
+## 📂 Project Structure
 
 ```
 src/
-├── components/     # Reusable React components
-│   ├── ui/        # UI component library
-│   └── ...        # Other components
-├── pages/         # Page components
-├── hooks/         # Custom React hooks
-├── lib/           # Utility functions
-└── data/         # Static data and content
+├── app/                    # Next.js app directory
+│   ├── layout.jsx         # Root layout
+│   ├── page.jsx           # Home page
+│   ├── about/             # About page
+│   ├── projects/          # Projects showcase
+│   ├── work/              # Work experience
+│   ├── contact/           # Contact form
+│   ├── cv/                # Resume/CV
+│   ├── api/               # API routes
+│   │   └── send-email/    # Email endpoint
+│   └── not-found.jsx      # 404 page
+├── components/            # React components
+│   ├── ui/                # shadcn/ui components
+│   ├── Header.jsx         # Navigation
+│   ├── Footer.jsx         # Footer
+│   ├── Layout.jsx         # Layout wrapper
+│   ├── SparkleAnimation.jsx
+│   ├── TechStack.jsx
+│   └── Specializations.jsx
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utilities
+├── data/                  # Static content
+└── styles/                # Global styles
+    ├── App.css
+    └── index.css
 ```
 
-## � Getting Started
+## 🎨 Key Components
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kasiranaweera/portfolio.git
-   ```
+- **Layout System** - Consistent page structure across the site
+- **Navigation** - Responsive header with smooth transitions
+- **Tech Stack Display** - Visual showcase of technologies
+- **Project Cards** - Interactive portfolio project displays
+- **Contact Form** - Functional email integration
+- **Custom Animations** - Engaging visual effects
 
-2. Install dependencies:
-   ```bash
-   # Using npm
-   npm install
+## 📄 Pages
 
-   # Using Bun
-   bun install
-   ```
+| Page | Description |
+|------|-------------|
+| **Home** | Landing page with introduction |
+| **About** | Background and personal story |
+| **Projects** | Portfolio of completed work |
+| **Work** | Professional experience timeline |
+| **Contact** | Get in touch form |
+| **CV** | Downloadable resume |
 
-3. Start the development server:
-   ```bash
-   # Using npm
-   npm run dev
+## 🚀 Built With
 
-   # Using Bun
-   bun run dev
-   ```
-
-4. Open [http://localhost:5173](http://localhost:5173) in your browser to see the result.
-
-## 🔧 Configuration
-
-The project uses several configuration files:
-
-- `vite.config.ts` - Vite configuration
-- `tailwind.config.ts` - Tailwind CSS configuration
-- `tsconfig.json` - TypeScript configuration
-- `components.json` - shadcn/ui components configuration
-
-## 📱 Components
-
-The project includes various reusable components:
-
-- `Layout.jsx` - Main layout wrapper
-- `Header.jsx` - Navigation header
-- `Footer.jsx` - Page footer
-- `SparkleAnimation.jsx` - Custom animation effects
-- `TechStack.jsx` - Technology showcase
-- `Specializations.jsx` - Skills and specialties
-- Various UI components from shadcn/ui
-
-## � Pages
-
-The site includes the following pages:
-
-- `Home.jsx` - Landing page with introduction
-- `About.jsx` - Detailed information and background
-- `Projects.jsx` - Showcase of portfolio projects
-- `Work.jsx` - Professional experience and work history
-- `Contact.jsx` - Contact form and information
-- `NotFound.jsx` - 404 error page
-
-## 🌟 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## � Author
-
-Kasi Ranaweera
-- GitHub: [@kasiranaweera](https://github.com/kasiranaweera)
+This portfolio demonstrates proficiency in modern web development practices, including:
+- Server-side rendering with Next.js
+- Component-based architecture
+- Type safety with TypeScript
+- Responsive design principles
+- API integration
+- Modern CSS with Tailwind
+- Animation and interactivity
 
 ---
 
-<div align="center">
+**Designed & Developed by [Kasi Ranaweera](https://github.com/kasiranaweera)**
 
-Made with Kasi Ranaweera using React + Vite + TypeScript
-
-</div>
+*Built with React + Vite + TypeScript + Next.js*
