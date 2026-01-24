@@ -285,12 +285,12 @@ const Home = () => {
 
             <div className="relative">
               <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center gap-3 flex-wrap">
+                <h2 className="text-3xl text-center md:text-4xl font-bold text-foreground flex items-center justify-center gap-3 flex-wrap">
                   <Brain className="w-8 h-8 text-primary flex-shrink-0" />
-                  Innovating at the Intersection of
+                  Innovating at the Intersection
                 </h2>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center gap-3 flex-wrap">
-                  AI and Software Engineering
+                <h2 className="text-3xl md:text-4xl text-center font-bold text-foreground mb-4 flex items-center justify-center gap-3 flex-wrap">
+                   of AI and Software Engineering
                 </h2>
                 <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full"></div>
               </div>
@@ -411,9 +411,9 @@ const Home = () => {
 
             <div className="relative">
               <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
+                <h2 className="text-3xl flex-col md:text-4xl font-bold text-foreground mb-4 flex gap-1 sm:gap-3 sm:flex-row items-center justify-center">
                   <Star className="w-8 h-8 mr-3 text-accent animate-spin-slow" />
-                  Featured Work & Innovation
+                  Featured Work & <span className="">Innovation</span>
                 </h2>
                 <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full"></div>
               </div>

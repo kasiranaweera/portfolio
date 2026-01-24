@@ -185,12 +185,9 @@ export default function TechStack() {
     <div className="fade-in-delayed mb-12 mt-24">
       {/* Header */}
       <div className="mb-12">
-        <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
+        <h3 className="text-3xl flex-col gap-1 mb-4 sm:gap-3 sm:flex-row md:text-4xl text-center font-bold text-foreground flex items-center justify-center">
           <Computer className="w-8 h-8 mr-3 text-accent" />
-          Technologies & Frameworks
-        </h3>
-        <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
-          I Work With
+          Technologies & Tools <span>I Work With</span>
         </h3>
         <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full"></div>
       </div>
