@@ -376,11 +376,11 @@ const Home = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="pt-4 gap-2 flex flex-col sm:flex-row justify-center flex-wrap">
+                <div className="pt-4 gap-2 flex flex-col sm:flex-row justify-center items-center">
                   <a href="/about">
                     <Button
                       variant="outline"
-                      className="border-primary/50 hover:bg-primary/10 hover:text-white transition-all duration-300 hover:scale-105 px-8 py-3 hover:shadow-primary hover:border-primary/80 group"
+                      className="border-primary/50 hover:bg-primary/10 hover:text-white items-center transition-all duration-300 hover:scale-105 px-8 py-3 hover:shadow-primary hover:border-primary/80 group"
                     >
                       <GraduationCap className="w-4 h-4 mr-2 group-hover:-translate-y-1 transition-transform" />
                       Learn More About Me

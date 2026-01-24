@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import AnimatedBackground from "../components/AnimatedBackground";
 import SparkleAnimation from "../components/SparkleAnimation";
-import Image_Techtool from "../../assets/image.png";
+import Image_Techtool from "../../assets/image.jpeg";
 import imgv11 from "../../assets/img-v11.jpg";
 import imgv12 from "../../assets/img-v12.jpg";
 import imgv13 from "../../assets/img-v13.jpg";
