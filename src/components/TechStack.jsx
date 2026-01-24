@@ -225,7 +225,7 @@ export default function TechStack() {
         </div>
 
         {/* RIGHT SIDE - Tech Icons */}
-        <div className="flex flex-col gap-12 border-l  pl-8">
+        <div className="flex flex-col gap-12 md:border-l  md:pl-8">
           {/* Core Tools */}
           <div>
             <div className="mb-8">
