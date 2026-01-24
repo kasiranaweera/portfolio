@@ -48,6 +48,7 @@ import imgv81 from "../../assets/img-v81.jpeg";
 import imgv82 from "../../assets/img-v82.jpg";
 import imgv83 from "../../assets/img-v83.jpg";
 import imgv91 from "../../assets/img-v91.jpeg";
+// This component needs 'use client' for modal and state management
 
 const Work = () => {
   const workExperience = [

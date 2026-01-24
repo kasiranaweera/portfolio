@@ -1,7 +1,7 @@
 import Home from '@/pages/Home';
 
 export const metadata = {
-  title: 'Home - KASI Ranaweera',
+  title: 'KASI Ranaweera (Sithija)',
   description: 'Software Engineer specializing in AI, ML, and Full-Stack Development',
   openGraph: {
     title: 'Home - KASI Ranaweera',

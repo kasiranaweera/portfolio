@@ -1,5 +1,3 @@
-'use client';
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import SparkleAnimation from "../components/SparkleAnimation";
@@ -20,18 +18,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import TechStack from "../components/TechStack";
-import { useState, useEffect } from "react";
 
 const Home = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const recentProjects = [
     {
@@ -382,9 +370,9 @@ const Home = () => {
                 <div className="absolute -top-4 -left-4 w-32 h-32 bg-gradient-primary opacity-5 rounded-full blur-3xl pointer-events-none"></div>
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-accent opacity-5 rounded-full blur-3xl pointer-events-none"></div>
                 
-                <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="relative z-10">
-                  <RecentProjectsCarousel projects={recentProjects} />
-                </div>
+                  <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="relative z-10">
+                    <RecentProjectsCarousel projects={recentProjects} />
+                  </div>
               </div>
             </div>
           </div>
