@@ -71,7 +71,7 @@ const RecentProjectsCarousel = ({ projects }) => {
                 {/* Project Header */}
                 <div className="mb-4 relative z-10">
                   <div className="flex items-start justify-center mb-3">
-                    <h3 className="text-xl font-bold text-foreground pr-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl text-center font-bold text-foreground pr-2 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
                   </div>
