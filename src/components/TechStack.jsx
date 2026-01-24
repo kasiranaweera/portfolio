@@ -299,7 +299,7 @@ export default function TechStack() {
           {/* AI & ML Tools */}
           <div className="">
             <div className="mb-8">
-              <h4 className="text-2xl font-bold text-foreground mb-4 text-center">AI & ML Technologies</h4>
+              <h4 className="text-2xl font-bold text-foreground mb-4 text-center">Specialized Tools</h4>
               <div className="h-0.5 w-16 bg-gradient-primary mx-auto rounded-full"></div>
             </div>
             <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 gap-4 max-w-2xl mx-auto">
