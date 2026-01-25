@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -137,12 +137,72 @@ const Work = () => {
     },
   ];
 
+  const academicProjects = [
+    {
+      title: "AI-Powered Research & Innovation",
+      icon: Brain,
+      description: "Applied machine learning to academic research challenges",
+      projects: [
+        {
+          name: "Deep Learning for Computer Vision",
+          description: "Developed CNN models for image classification and object detection"
+        },
+        {
+          name: "NLP & Text Analysis Projects",
+          description: "Built text summarization and sentiment analysis applications"
+        },
+        {
+          name: "Data Science & Analytics",
+          description: "Analyzed complex datasets using statistical methods and visualization"
+        }
+      ]
+    },
+    {
+      title: "Software Development & Architecture",
+      icon: Code2,
+      description: "Full-stack development projects applying best practices",
+      projects: [
+        {
+          name: "Web Applications & APIs",
+          description: "Created scalable web apps with modern frameworks and microservices"
+        },
+        {
+          name: "Database Management",
+          description: "Designed and optimized database systems for complex applications"
+        },
+        {
+          name: "Cloud & DevOps",
+          description: "Deployed applications using Docker, Kubernetes, and cloud platforms"
+        }
+      ]
+    },
+    {
+      title: "Community & Open Source Contributions",
+      icon: Users,
+      description: "Contributing to tech community through collaboration and knowledge sharing",
+      projects: [
+        {
+          name: "Technical Workshops & Mentoring",
+          description: "Conducted workshops on AI/ML, web development, and emerging technologies"
+        },
+        {
+          name: "Research Collaboration",
+          description: "Participated in research initiatives on AI applications and problem-solving"
+        },
+        {
+          name: "Knowledge Sharing",
+          description: "Shared learnings through blog posts, presentations, and community events"
+        }
+      ]
+    }
+  ];
+
   const otherProjects = [
     {
       title: "NASA Space Apps Colombo",
       rank: "Event & Logistics Team Member",
       description:
-        "I supported the coordination and logistics of NASA’s global hackathon in Colombo. I assisted in managing venue setup, organizing the prize-giving event, and providing participant support. Collaborating closely with the organizing team, I ensured the smooth execution of competition activities, contributing to a successful and impactful event.",
+        "I supported the coordination and logistics of NASA's global hackathon in Colombo. I assisted in managing venue setup, organizing the prize-giving event, and providing participant support. Collaborating closely with the organizing team, I ensured the smooth execution of competition activities, contributing to a successful and impactful event.",
       images: [imgv51, imgv52, imgv53],
       projects: [],
     },
@@ -236,17 +296,16 @@ const Work = () => {
                 <div className="fade-in-up space-y-6 mb-12">
                   <div className="space-y-4">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold gradient-text leading-tight animate-slide-up">
-                      Work Experience &
+                      Building Experience Through
                       <br />
                       <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-shimmer">
-                        Community Impact
+                        Projects & Community Impact
                       </span>
                     </h1>
                   </div>
 
                   <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in">
-                    My professional journey in AI, ML, and software engineering centers on developing innovative solutions and driving community impact through leadership and volunteering in technology-focused initiatives.
-                  </p>
+While completing my undergraduate degree, I've gained practical experience through academic projects, research initiatives, and community volunteer work. My journey has been focused on applying AI/ML knowledge to solve real-world problems and contributing to the tech community.                  </p>
                 </div>
               </div>
 
@@ -486,6 +545,72 @@ const Work = () => {
             ))}
           </div>
 
+          {/* Academic Projects & Research Section */}
+          <div className="fade-in-delayed mb-24 relative group mt-24">
+            <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-primary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+            
+            <div className="relative">
+              <div className="mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
+                  <Sparkles className="w-8 h-8 mr-3 text-accent animate-spin-slow" />
+                  Academic & Research Journey
+                </h2>
+                <p className="text-center text-muted-foreground text-lg max-w-3xl mx-auto mb-6">
+                  Applying AI/ML knowledge to solve real-world problems through academic projects, research initiatives, and collaborative learning experiences.
+                </p>
+                <div className="h-1 w-20 bg-gradient-accent mx-auto rounded-full"></div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
+                {academicProjects.map((project, index) => {
+                  const IconComponent = project.icon;
+                  return (
+                    <Card
+                      key={index}
+                      className="p-8 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-gradient-accent/30 hover:border-gradient-accent/60 transition-all duration-500 hover:shadow-2xl hover:scale-105 group cursor-pointer"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/10 group-hover:via-primary/5 group-hover:to-accent/5 transition-all duration-500 rounded-lg"></div>
+                      
+                      <div className="relative">
+                        {/* Icon & Title */}
+                        <div className="mb-6">
+                          <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <IconComponent className="w-6 h-6 text-accent group-hover:text-primary transition-colors" />
+                          </div>
+                          <h3 className="text-2xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                            {project.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                            {project.description}
+                          </p>
+                        </div>
+
+                        {/* Projects List */}
+                        <div className="space-y-4">
+                          {project.projects.map((proj, idx) => (
+                            <div
+                              key={idx}
+                              className="border border-border/30 rounded-lg p-4 bg-background/30 hover:bg-background/50 hover:border-accent/50 transition-all duration-300"
+                            >
+                              <h4 className="text-sm font-semibold text-foreground mb-2 flex items-start gap-2">
+                                <span className="text-accent mt-1">✦</span>
+                                <span>{proj.name}</span>
+                              </h4>
+                              <p className="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                                {proj.description}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
           <div className="fade-in-delayed mb-24 relative group mt-16">
             <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-accent/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
             
@@ -575,6 +700,182 @@ const Work = () => {
             ))}
             </div>
           </div>
+          </div>
+
+          {/* Professional Goals & Work Availability */}
+          <div className="fade-in-delayed mb-24 relative group mt-24">
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-accent/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+            
+            <div className="relative">
+              <div className="mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
+                  <Zap className="w-8 h-8 mr-3 text-primary animate-pulse" />
+                  Goals & Availability
+                </h2>
+                <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full"></div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Professional Goals */}
+                <div className="relative group cursor-pointer">
+                  <Card className="p-8 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-gradient-primary/30 hover:border-gradient-primary/60 transition-all duration-500 hover:shadow-2xl h-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-primary/5 transition-all duration-500 rounded-lg"></div>
+                    
+                    <div className="relative">
+                      <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center group-hover:text-primary transition-colors">
+                        <Brain className="w-6 h-6 mr-3 text-primary" />
+                        Professional Goals
+                      </h3>
+
+                      <div className="space-y-6">
+                        {/* Short-term Goals */}
+                        <div>
+                          <h4 className="text-lg font-semibold text-accent mb-3 group-hover:text-primary transition-colors">
+                            Short-term (1-2 years)
+                          </h4>
+                          <ul className="space-y-2">
+                            <li className="flex items-start gap-3">
+                              <span className="text-primary text-lg leading-none">→</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Complete BSc with distinction
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-primary text-lg leading-none">→</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Publish research on educational AI
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-primary text-lg leading-none">→</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Contribute to major open-source AI projects
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-primary text-lg leading-none">→</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Gain industry experience in AI/ML roles
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        {/* Long-term Goals */}
+                        <div>
+                          <h4 className="text-lg font-semibold text-accent mb-3 group-hover:text-primary transition-colors">
+                            Long-term (3-5 years)
+                          </h4>
+                          <ul className="space-y-2">
+                            <li className="flex items-start gap-3">
+                              <span className="text-primary text-lg leading-none">→</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Pursue graduate studies (MSc/PhD in AI/ML)
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-primary text-lg leading-none">→</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Lead research projects with social impact
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-primary text-lg leading-none">→</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Build successful EdTech products
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        {/* Vision */}
+                        <div className="pt-4 border-t border-border/30">
+                          <p className="text-sm font-semibold text-foreground mb-2">Ultimate Vision:</p>
+                          <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors italic">
+                            Leverage AI to democratize education and create impactful solutions that improve lives, particularly in developing countries.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+
+                {/* Work Availability */}
+                <div className="relative group cursor-pointer">
+                  <Card className="p-8 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-gradient-accent/30 hover:border-gradient-accent/60 transition-all duration-500 hover:shadow-2xl h-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/10 group-hover:via-primary/5 group-hover:to-accent/5 transition-all duration-500 rounded-lg"></div>
+                    
+                    <div className="relative">
+                      <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center group-hover:text-accent transition-colors">
+                        <Users className="w-6 h-6 mr-3 text-accent" />
+                        Work Availability
+                      </h3>
+
+                      <div className="space-y-6">
+                        {/* Current Status */}
+                        <div className="bg-primary/10 border border-primary/30 rounded-lg p-4">
+                          <p className="text-sm font-semibold text-primary mb-1">Current Status</p>
+                          <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                            Final Year Student (Graduating 2026)
+                          </p>
+                        </div>
+
+                        {/* Available For */}
+                        <div>
+                          <h4 className="text-lg font-semibold text-accent mb-3 group-hover:text-primary transition-colors">
+                            Available For
+                          </h4>
+                          <ul className="space-y-2">
+                            <li className="flex items-start gap-3">
+                              <span className="text-accent text-lg leading-none">◆</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Internships in AI/ML or Software Engineering
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-accent text-lg leading-none">◆</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Part-time remote work
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-accent text-lg leading-none">◆</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Freelance AI/ML projects
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-accent text-lg leading-none">◆</span>
+                              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                Research collaborations
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        {/* Preferred Work */}
+                        <div>
+                          <h4 className="text-lg font-semibold text-accent mb-3 group-hover:text-primary transition-colors">
+                            Preferred Focus
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {["AI/ML Engineering", "Full-stack Dev", "EdTech", "Research", "Remote/Hybrid"].map((item) => (
+                              <Badge
+                                key={item}
+                                variant="outline"
+                                className="border-accent/30 text-accent hover:bg-accent/10 transition-colors text-xs"
+                              >
+                                {item}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Call to Action */}

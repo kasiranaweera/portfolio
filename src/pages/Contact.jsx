@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -58,8 +58,8 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Sri Lanka",
-      description: "Pacific Time Zone (UTC-8)",
+      value: "Colombo, Sri Lanka",
+      description: "GMT+5:30 (IST)",
     },
     {
       icon: Clock,
@@ -82,8 +82,8 @@ const Contact = () => {
 
       <div className="relative z-10 container mx-auto px-6 py-20 lg:py-32 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16 animate-fade-in">
+          {/* HERO SECTION */}
+          <div className="text-center mb-20 lg:mb-32">
             {/* Animated Badge */}
             <div className="fade-in-up mb-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
@@ -93,12 +93,10 @@ const Contact = () => {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6 animate-slide-up">
-              Get In Touch
+              Let's Connect and Collaborate
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              Let's collaborate on exciting AI & Web projects, discuss research
-              opportunities, or explore how we can push the boundaries of
-              artificial intelligence together.
+              Whether you have a project idea, collaboration opportunity, or just want to discuss AI and technology, I'd love to hear from you. I'm always excited to work on innovative solutions and connect with like-minded individuals.
             </p>
           </div>
 
@@ -108,7 +106,7 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-primary/5 transition-all duration-500 rounded-lg"></div>
                 
                 <div className="relative">
-                  <h2 className="text-2xl font-semibold text-foreground mb-6 flex items-center group-hover:text-primary transition-colors">
+                  <h2 className="text-2xl justify-center font-semibold text-foreground mb-6 flex items-center group-hover:text-primary transition-colors">
                     <MessageCircle className="w-6 h-6 mr-3 text-primary" />
                     Send a Message
                   </h2>
@@ -128,7 +126,7 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-primary/5 transition-all duration-500 rounded-lg"></div>
                 
                 <div className="relative">
-                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 flex justify-center items-center group-hover:text-primary transition-colors">
                     <Mail className="w-5 h-5 mr-2 text-primary" />
                     Contact Methods
                   </h3>
@@ -178,13 +176,13 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/10 group-hover:via-primary/5 group-hover:to-accent/5 transition-all duration-500 rounded-lg"></div>
                 
                 <div className="relative">
-                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center group-hover:text-accent transition-colors">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 justify-center flex items-center group-hover:text-accent transition-colors">
                     <Globe className="w-5 h-5 mr-2 text-accent" />
                     Quick Info
                   </h3>
-                  <div className="space-y-4 flex gap-8 justify-evenly items-center">
+                  <div className="space-y-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
                     {quickInfo.map((info, index) => (
-                      <div key={index} className="flex items-start space-x-3 py-3 px-8 rounded-lg hover:bg-accent/5 transition-all duration-300 group/item">
+                      <div key={index} className="flex w-full h-full items-start space-x-3 py-3 px-8 rounded-lg hover:bg-accent/5 transition-all duration-300 group/item">
                         <div className="p-2 rounded-lg bg-accent/10 flex-shrink-0">
                           <info.icon className="w-4 h-4 text-accent" />
                         </div>

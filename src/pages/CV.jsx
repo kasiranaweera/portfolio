@@ -19,8 +19,8 @@ const CV = () => {
 
       <div className="relative z-10 container mx-auto px-6 py-20 lg:py-32 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto">
-          {/* Header Section */}
-          <div className="text-center mb-16 animate-fade-in">
+          {/* HERO SECTION */}
+          <div className="text-center mb-20 lg:mb-32">
             {/* Animated Badge */}
             <div className="fade-in-up mb-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
