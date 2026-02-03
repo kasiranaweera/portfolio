@@ -113,7 +113,7 @@ const About = () => {
     {
       topic: "AI/ML Engineer - Stage 2",
       company: "SLIIT",
-      date: "Jan 2027",
+      date: "Jan 2026",
       dec1: "bpl3sw86eu",
       link: "https://code.sliit.org/certificates/bpl3sw86eu",
     },

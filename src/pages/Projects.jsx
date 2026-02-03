@@ -290,7 +290,7 @@ const Projects = () => {
     },
 
     {
-      title: "Knowingz Platform",
+      title: "Knowingz Platform - OL Poddo",
       description:
         "Knowingz is a comprehensive educational platform dedicated to mathematics for O/Level students in Sri Lanka. The platform provides free access to study materials, past papers, and interactive learning tools, addressing the gap in accessible quality education resources.",
       highlights: [
