@@ -27,6 +27,7 @@ import imgp32 from "../../assets/img-p32.jpeg";
 import imgp41 from "../../assets/img-p41.png";
 import imgp42 from "../../assets/img-p42.png";
 import imgp51 from "../../assets/img-p51.png";
+import imgp61 from "../../assets/img-p61.jpeg";
 
 const ProjectCarouselCard = ({ project, openModal }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -196,11 +197,10 @@ const ProjectCarouselCard = ({ project, openModal }) => {
                           e.stopPropagation();
                           setCurrentImageIndex(idx);
                         }}
-                        className={`h-2 rounded-full transition-all duration-300 ${
-                          idx === currentImageIndex
-                            ? "bg-white w-6"
-                            : "bg-white/50 w-2 hover:bg-white/70"
-                        }`}
+                        className={`h-2 rounded-full transition-all duration-300 ${idx === currentImageIndex
+                          ? "bg-white w-6"
+                          : "bg-white/50 w-2 hover:bg-white/70"
+                          }`}
                         aria-label={`Go to image ${idx + 1}`}
                       />
                     ))}
@@ -254,6 +254,20 @@ const ProjectCarouselCard = ({ project, openModal }) => {
 };
 
 const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const categoriesList = ["All", "AI Projects", "Web Applications", "Other"];
+
+  const filterProject = (project) => {
+    if (activeCategory === "All") return true;
+    const cat = project.category?.toLowerCase() || "";
+    if (activeCategory === "AI Projects") return cat.includes("ai") || cat.includes("generative") || cat.includes("machine learning") || cat.includes("deep learning") || cat.includes("dl");
+    if (activeCategory === "Web Applications") return cat.includes("web") || cat.includes("full-stack") || cat.includes("saas") || cat.includes("sltc") || cat.includes("education technology");
+    // if (activeCategory === "Mobile Applications") return cat.includes("mobile") || cat.includes("android") || cat.includes("ios");
+    // if (activeCategory === "Desktop Apps") return cat.includes("desktop");
+    if (activeCategory === "Other") return !cat.includes("ai") && !cat.includes("generative") && !cat.includes("machine learning") && !cat.includes("deep learning") && !cat.includes("dl") && !cat.includes("web") && !cat.includes("full-stack") && !cat.includes("saas") && !cat.includes("sltc") && !cat.includes("education technology") && !cat.includes("mobile") && !cat.includes("android") && !cat.includes("ios") && !cat.includes("desktop");
+    return true;
+  };
+
   const featuredProjects = [
     {
       title: "EduWingz - AI-Powered Education Platform",
@@ -287,6 +301,23 @@ const Projects = () => {
       images: [imgp11, imgp12, imgp13],
       impact:
         "Demonstrated potential to improve learning outcomes through personalization while reducing teacher workload. Currently being piloted with test user groups.",
+    },{
+      title: "Retail POS System — Desktop App",
+      description:
+        "Built and deployed a production point-of-sale desktop app for a retail client covering real-time inventory tracking, sales reporting, and receipt generation on local hardware. Collaborated with a team across requirements gathering, UI design, and client deployment, covering the full development lifecycle from brief to shipped product.",
+      highlights: [
+        "Real-time inventory tracking",
+        "Sales reporting and analytics",
+        "Receipt generation on local hardware",
+        "Local data architecture & client deployment",
+      ],
+      category: "Desktop Application",
+      technologies: ["Electron", "React", "SQLite", "JavaScript"],
+      github: "",
+      live: "",
+      status: "Client Delivered Project",
+      teamSize: "Team Project",
+      images: [imgp61],
     },
 
     {
@@ -320,33 +351,7 @@ const Projects = () => {
       impact:
         "Provides free educational resources to thousands of students who may not have access to expensive tuition or study materials. Contributing to educational equality in Sri Lanka.",
     },
-    {
-      title: "AI Assistant with MCP Servers",
-      description:
-        "An advanced AI assistant built using the Model Context Protocol (MCP), demonstrating integration of multiple AI services and tools. This project explores the cutting-edge of agentic AI, where multiple specialized components work together to solve complex tasks.",
-      highlights: [
-        "Multi-tool integration through MCP protocol",
-        "LangChain orchestration for agent coordination",
-        "Groq integration for high-speed inference",
-        "Context-aware conversation management",
-        "Tool selection and execution",
-        "Error handling and fallback mechanisms",
-      ],
-      category: "Generative AI, Agentic Systems",
-      technologies: [
-        "LangChain",
-        "Groq",
-        "MCP",
-        "Python with async capabilities",
-      ],
-      github: "https://github.com/kasiranaweera/AI-Assistant-With-MCP-Servers",
-      live: "",
-      status: "Completed",
-      teamSize: "Solo Project",
-      images: [imgp51],
-      impact:
-        " Showcases the potential of agentic AI systems to perform complex tasks by leveraging multiple specialized tools. Lays groundwork for future AI assistants that can seamlessly integrate diverse capabilities.",
-    },
+    
     {
       title: "HaiiBot - AI-powered chatbot platform",
       description:
@@ -372,16 +377,41 @@ const Projects = () => {
       teamSize: "Solo Project",
       images: [imgp41, imgp42],
     },
+  ];
+
+  const otherProjects = [
+    {
+      title: "AI Assistant with MCP Servers",
+      description:
+        "An advanced AI assistant built using the Model Context Protocol (MCP), demonstrating integration of multiple AI services and tools. This project explores the cutting-edge of agentic AI, where multiple specialized components work together to solve complex tasks.",
+      category: "Generative AI, Agentic Systems",
+      status: "Completed",
+      Features: [
+        "Multi-tool integration through MCP protocol",
+        "LangChain orchestration for agent coordination",
+        "Groq integration for high-speed inference",
+        "Context-aware conversation management",
+        "Tool selection and execution",
+      ],
+      technologies: [
+        "LangChain",
+        "Groq",
+        "MCP",
+        "Python with async capabilities",
+      ],
+      github: "https://github.com/kasiranaweera/AI-Assistant-With-MCP-Servers",
+    },
     {
       title: "A9teen Project",
       description:
         "Innovative Web3 digital marketplace concept blending blockchain technology with decentralized e-commerce.",
-      highlights: [
+      category: "SLTC Venture Program",
+      status: "Planning Phase",
+      Features: [
         "Ethereum-based smart contracts",
         "NFT functionalities for digital assets",
         "Focus on small business empowerment",
       ],
-      category: "SLTC Venture Program",
       technologies: [
         "Next JS",
         "Tailwind CSS",
@@ -389,15 +419,7 @@ const Projects = () => {
         "Smart Contracts",
         "Web3",
       ],
-      github: "",
-      live: "",
-      status: "Planning Phase",
-      teamSize: "Team Project",
-      images: [imgp31, imgp32],
     },
-  ];
-
-  const otherProjects = [
     {
       title: "Z-Score University Finder",
       category: "Machine Learning, Education",
@@ -627,11 +649,28 @@ const Projects = () => {
                       <Code2 className="w-8 h-8 mr-3 text-accent" />
                       Other Notable Projects
                     </h2>
-                    <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full"></div>
+                    <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full mb-8"></div>
+
+                    <div className="flex flex-wrap justify-center gap-3">
+                      {categoriesList.map((cat) => (
+                        <Button
+                          key={cat}
+                          size="sm"
+                          variant="outline"
+                          onClick={() => setActiveCategory(cat)}
+                          className={`rounded-full transition-all duration-300 ${activeCategory === cat
+                            ? "bg-gradient-primary text-white border-primary shadow-lg shadow-primary/30 hover:opacity-90"
+                            : "border-primary/20 text-foreground hover:bg-primary/5 hover:border-primary/50"
+                            }`}
+                        >
+                          {cat}
+                        </Button>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                    {otherProjects.map((project, index) => (
+                    {otherProjects.filter(filterProject).map((project, index) => (
                       <Card
                         key={index}
                         className="p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-gradient-primary/30 hover:border-gradient-primary/60 transition-all duration-500 hover:shadow-2xl hover:scale-105 group cursor-pointer"

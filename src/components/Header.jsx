@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 
@@ -48,11 +48,10 @@ const Header = () => {
   if (!mounted) return null;
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-      isScrolled 
-        ? "border-b border-border/20 bg-background/98 backdrop-blur-xl supports-[backdrop-filter]:bg-background/95 shadow-xl" 
-        : "border-b border-border/10 bg-background/90 backdrop-blur-lg"
-    }`}>
+    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
+      ? "border-b border-border/20 bg-background/98 backdrop-blur-xl supports-[backdrop-filter]:bg-background/95 shadow-xl"
+      : "border-b border-border/10 bg-background/90 backdrop-blur-lg"
+      }`}>
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -73,8 +72,8 @@ const Header = () => {
                 href={item.href}
                 className={cn(
                   'text-sm font-medium px-3 py-2 rounded-lg transition-all duration-300 relative group',
-                  isActive(item.href) 
-                    ? 'text-primary bg-primary/10' 
+                  isActive(item.href)
+                    ? 'text-primary bg-primary/10'
                     : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
                 )}
               >
@@ -82,16 +81,45 @@ const Header = () => {
                 {/* Animated underline on hover */}
                 <span className={cn(
                   'absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-primary rounded-full transition-all duration-300',
-                  isActive(item.href) 
-                    ? 'opacity-100 scale-x-100' 
+                  isActive(item.href)
+                    ? 'opacity-100 scale-x-100'
                     : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
                 )} />
               </Link>
             ))}
           </nav>
 
-          {/* Theme Toggle & Mobile Menu */}
+          {/* Social Links, Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-2">
+            {/* Desktop Social Links */}
+            <div className="hidden md:flex items-center space-x-2 mr-2 border-r border-border pr-4">
+              <a
+                href="https://www.linkedin.com/in/kasi-ranaweera"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-[#0077b5]/10 text-muted-foreground hover:text-[#0077b5] transition-colors"
+                title="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="https://github.com/kasiranaweera"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
+                title="GitHub"
+              >
+                <Github className="w-4 h-4" />
+              </a>
+              <Link
+                href="/contact"
+                className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-secondary/10 text-muted-foreground hover:text-secondary-foreground transition-colors"
+                title="Contact"
+              >
+                <Mail className="w-4 h-4" />
+              </Link>
+            </div>
+
             {/* Theme Toggle Button */}
             <Button
               variant="ghost"
@@ -150,8 +178,8 @@ const Header = () => {
                   {/* Animated underline on hover for mobile */}
                   <span className={cn(
                     'absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-primary rounded-full transition-all duration-300',
-                    isActive(item.href) 
-                      ? 'opacity-100 scale-x-100' 
+                    isActive(item.href)
+                      ? 'opacity-100 scale-x-100'
                       : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
                   )} />
                 </Link>
