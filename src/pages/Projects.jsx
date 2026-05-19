@@ -28,6 +28,12 @@ import imgp41 from "../../assets/img-p41.png";
 import imgp42 from "../../assets/img-p42.png";
 import imgp51 from "../../assets/img-p51.png";
 import imgp61 from "../../assets/img-p61.jpeg";
+import imgp71 from "../../assets/img-p71.png";
+import imgp81 from "../../assets/img-p81.png";
+import imgp82 from "../../assets/img-p82.png";
+import imgp83 from "../../assets/img-p83.png";
+import imgp84 from "../../assets/img-p84.png";
+import imgp85 from "../../assets/img-p85.png";
 
 const ProjectCarouselCard = ({ project, openModal }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -301,8 +307,11 @@ const Projects = () => {
       images: [imgp11, imgp12, imgp13],
       impact:
         "Demonstrated potential to improve learning outcomes through personalization while reducing teacher workload. Currently being piloted with test user groups.",
-    },{
-      title: "Retail POS System — Desktop App",
+    },
+    
+    
+    {
+      title: "Retail POS System — Desktop App (Client Project) ",
       description:
         "Built and deployed a production point-of-sale desktop app for a retail client covering real-time inventory tracking, sales reporting, and receipt generation on local hardware. Collaborated with a team across requirements gathering, UI design, and client deployment, covering the full development lifecycle from brief to shipped product.",
       highlights: [
@@ -320,7 +329,99 @@ const Projects = () => {
       images: [imgp61],
     },
 
+    
+    // {
+    //   title: "HaiiBot - AI-powered chatbot platform",
+    //   description:
+    //     "AI-powered chatbot platform for shops to automate customer conversations and support across multiple channels.",
+    //   highlights: [
+    //     "Multi-channel support (WhatsApp, Telegram, Messenger)",
+    //     "Shop-specific knowledge base",
+    //     "Built-in ticketing system for complaints",
+    //   ],
+    //   category: "SaaS Application",
+    //   technologies: [
+    //     "React JS - Vite",
+    //     "FastAPI",
+    //     "Tailwind CSS",
+    //     "LangChain",
+    //     "Gemini AI",
+    //     "SQLite",
+    //     "Python",
+    //   ],
+    //   github: "",
+    //   live: "",
+    //   status: "Active Development",
+    //   teamSize: "Solo Project",
+    //   images: [imgp41, imgp42],
+    // },
     {
+      title: "EduLM - Gemma4 Fine-tuned Language Model",
+      description:
+        "A specialized fine-tuned version of Gemma-4 language model designed specifically for educational content generation and intelligent student support. Optimized through LoRA fine-tuning on comprehensive educational datasets to deliver high-quality explanations, personalized learning materials, and adaptive tutoring experiences.",
+      highlights: [
+        "Fine-tuned Gemma-4 model for educational excellence",
+        "LoRA optimization for efficient training",
+        "Specialized for generating educational content",
+        "Personalized explanations for various learning levels",
+        "Integration with educational platforms",
+        "High-performance inference capabilities",
+        "Kaggle model hub integration",
+      ],
+      category: "Generative AI, Machine Learning",
+      technologies: [
+        "Gemma-4",
+        "PyTorch",
+        "Hugging Face Transformers",
+        "LoRA Fine-tuning",
+        "Educational Datasets",
+        "Kaggle Hub",
+        "CUDA Optimization",
+      ],
+      github: "https://github.com/kasiranaweera/EduLM-Gemma4",
+      live: "",
+      status: "Completed",
+      teamSize: "Solo Project",
+      images: [imgp71],
+      impact:
+        "Democratizes access to high-quality educational AI, enabling personalized learning experiences at scale. Demonstrates effective domain-specific fine-tuning for educational applications.",
+    },
+    {
+      title: "FinPilot - Financial AI Assistant",
+      description:
+        "A sophisticated financial AI assistant powered by state-of-the-art language models and RAG systems to provide comprehensive financial guidance, real-time market insights, and personalized investment recommendations. Integrates live financial data APIs with intelligent retrieval-augmented generation for accurate, context-aware financial advice.",
+      highlights: [
+        "Real-time financial market data integration",
+        "Retrieval-Augmented Generation for accurate insights",
+        "Portfolio analysis and optimization",
+        "Investment recommendation engine",
+        "Risk assessment and management",
+        "Financial literacy explanations",
+        "Multi-asset class support",
+        "Interactive financial dashboard",
+      ],
+      category: "Generative AI, Finance",
+      technologies: [
+        "LangChain",
+        "Gemini API",
+        "RAG System",
+        "Financial APIs",
+        "Python",
+        "FastAPI",
+        "React.js",
+        "FAISS vector store",
+        "Real-time data processing",
+      ],
+      github: "https://github.com/kasiranaweera/FinPilot-FinancialAI",
+      live: "",
+      status: "Completed",
+      teamSize: "Solo Project",
+      images: [imgp81, imgp82, imgp83, imgp84, imgp85],
+      impact:
+        "Makes sophisticated financial analysis accessible to everyday investors. Combines AI expertise with financial domain knowledge to democratize financial decision-making.",
+    },
+
+      {
       title: "Knowingz Platform - OL Poddo",
       description:
         "Knowingz is a comprehensive educational platform dedicated to mathematics for O/Level students in Sri Lanka. The platform provides free access to study materials, past papers, and interactive learning tools, addressing the gap in accessible quality education resources.",
@@ -350,32 +451,6 @@ const Projects = () => {
       images: [imgp21, imgp22],
       impact:
         "Provides free educational resources to thousands of students who may not have access to expensive tuition or study materials. Contributing to educational equality in Sri Lanka.",
-    },
-    
-    {
-      title: "HaiiBot - AI-powered chatbot platform",
-      description:
-        "AI-powered chatbot platform for shops to automate customer conversations and support across multiple channels.",
-      highlights: [
-        "Multi-channel support (WhatsApp, Telegram, Messenger)",
-        "Shop-specific knowledge base",
-        "Built-in ticketing system for complaints",
-      ],
-      category: "SaaS Application",
-      technologies: [
-        "React JS - Vite",
-        "FastAPI",
-        "Tailwind CSS",
-        "LangChain",
-        "Gemini AI",
-        "SQLite",
-        "Python",
-      ],
-      github: "",
-      live: "",
-      status: "Active Development",
-      teamSize: "Solo Project",
-      images: [imgp41, imgp42],
     },
   ];
 
@@ -564,6 +639,41 @@ const Projects = () => {
       ],
       github: "https://github.com/kasiranaweera/ar-space-education",
     },
+    // {
+    //   title: "FinPilot - Financial AI Assistant",
+    //   category: "Generative AI, Finance",
+    //   status: "Active Development",
+    //   description:
+    //     "An intelligent financial AI assistant powered by advanced language models to provide financial guidance, investment insights, and personal finance management. Uses RAG for accurate financial context and real-time market data integration.",
+    //   technologies: [
+    //     "LangChain",
+    //     "Gemini API",
+    //     "RAG System",
+    //     "Financial APIs",
+    //     "Python",
+    //     "FastAPI",
+    //     "React.js",
+    //     "FAISS vector store",
+    //   ],
+    //   github: "https://github.com/kasiranaweera/FinPilot-FinancialAI",
+    // },
+    // {
+    //   title: "EduLM - Gemma4 Fine-tuned Language Model",
+    //   category: "Generative AI, Machine Learning",
+    //   status: "Completed",
+    //   description:
+    //     "A fine-tuned version of Gemma-4 language model specialized for educational content generation and student support. Optimized for creating explanations, study materials, and personalized learning experiences.",
+    //   technologies: [
+    //     "Gemma-4",
+    //     "PyTorch",
+    //     "Hugging Face Transformers",
+    //     "LoRA Fine-tuning",
+    //     "Educational Datasets",
+    //     "Kaggle",
+    //     "Model Hub Integration",
+    //   ],
+    //   github: "https://github.com/kasiranaweera/EduLM-Gemma4",
+    // },
   ];
 
   return (
